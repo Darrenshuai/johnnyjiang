@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<title>假面:喊你匿名来投票啦！</title>
+	<link rel="stylesheet" type="text/css" href="assert/css/share.css">
+	<script src="assert/js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="title">
+			<div class="bg"><img src="assert/img/mobile/bg_title.png"></div>
+			<div class="shodw"><img src="assert/img/mobile/shodw.png">
+				<h4>竟然有90%的人选了A!把民意结果分享到朋友圈吧!</h4>
+			</div>
+			<table>
+                <tbody>
+                    <tr>
+                        <td>
+							
+                        <div class="content">
+                        	<i class="icon"></i>
+                        	<span>你喜欢假面这款匿名社交应用吗?我可是很喜欢哦，期待大家的答案哦，快来说说吧！期待大家的答案哦,快来说说吧!!</span>
+                        </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+			<div class="mes">
+                    <div class="circle">华东理工大学</div>
+                    <div class="relates">
+                        <div class="tag liked-count">
+                            <i class="icon i-like"></i>
+                            <span class="num">87</span>
+                     </div>
+                     <div class="tag comment-count">
+                            <i class="icon i-comment"></i>
+                            <span class="num">3</span>
+                  </div>
+                </div>
+			</div>
+		</div>
+		<div class="rec">
+			<ul>
+			    <li>
+			    	<div class="items">
+			    		<p>A. 爆料不够猛，求更猛更赞A. 爆料不够猛，求更猛更赞A. 爆料不够猛，求更猛更赞A. 爆料不够猛，求更猛更赞</p>
+			    		<span class="icon"></span>
+			    	</div>
+			    	<div class="bg_shodw b1"></div>
+			    </li>
+			    <li>
+			    	<div class="items">
+			    		<p>B. 还行，看看爆料，娱乐娱乐</p>
+			    		<span class="icon"></span>
+			    	</div>
+			    	<div class="bg_shodw b2"></div>
+			    </li>
+			    <li>
+			    	<div class="items last">
+			    		<p>C. 大爱呀，简直不能更赞!</p>
+			    		<span class="icon"></span>
+			    	</div>
+			    	<div class="bg_shodw b3"></div>
+			    </li>
+			</ul>
+		</div>
+		<div class="comments">
+			<h3 class="comment-title"><i class="icon hot"></i>热门评论</h3>
+			<ul>
+				<li>
+					<div class="com-cons">
+						<div class="user">
+							<img src="assert/img/mobile/u1.png" />
+						</div>
+						<div class="content">
+                            <p>谁在你面前评论其他女生了,消消气</p>
+                            <div>
+                                1楼 18小时前
+                             </div>
+                        </div>
+                        <div class="like-num">
+                        	<a class="icon"></a>
+                        	<span>98</span>
+                        </div>
+					</div>
+				</li>
+				<li>
+					<div class="com-cons">
+						<div class="user">
+							<img src="assert/img/mobile/u2.png" />
+						</div>
+						<div class="content">
+                            <p>回复1楼:就班上一个男生，老喜欢 在我面前说谁谁漂亮</p>
+                            <div>
+                                2楼 18小时前
+                             </div>
+                        </div>
+                        <div class="like-num">
+                        	<a class="icon"></a>
+                        	<span>98</span>
+                        </div>
+					</div>
+				</li>
+				<li>
+					<div class="com-cons">
+						<div class="user">
+							<img src="assert/img/mobile/u3.png" />
+						</div>
+						<div class="content last">
+                            <p>回复2楼:不会是喜欢你吧</p>
+                            <div>
+                                3楼 18小时前
+                             </div>
+                        </div>
+                        <div class="like-num last">
+                        	<a class="icon"></a>
+                        	<span>98</span>
+                        </div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="subimt">
+<!-- 			<div class="com_form">
+				<div class="input_t">
+					<input type="text" placeholder="匿名发表评论"/>
+					<input class="sub" type="button"/ >
+				</div>
+			</div> -->
+			<a class="sub-bt" href="http://www.jiamiantech.com">
+				<img src="assert/img/mobile/bt2.jpg" />
+			</a>
+		</div>
+		<div class="app-down">
+			<div  class="text">
+				<a href="#">
+					<img src="assert/img/mobile/logo.png" />
+					<span><strong>假面-</strong>不只是匿名爆料</span>
+				</a>
+			</div>
+			<a class="d_btn" href="http://jiamianv1.oss-cn-beijing.aliyuncs.com/Jiamian1.5.3.apk">
+				<img src="assert/img/mobile/bot_btn.png" />
+			</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		 var browser={
+		   versions:function(){
+		       var u = navigator.userAgent, app = navigator.appVersion;
+		       return {//移动终端浏览器版本信息
+		            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+		            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+		        	is_weixin:function()
+	                {
+						if(u.toLowerCase().match(/MicroMessenger/i)=="micromessenger") {
+							return true;
+					 	} else {
+							return false;
+						}
+	                },
+		        };
+		     }(),
+		     language:(navigator.browserLanguage || navigator.language).toLowerCase()
+	    };
+
+	    if(browser.versions.iPhone)
+		{
+			if(browser.versions.is_weixin())
+			{
+				$(".d_btn").attr("href","http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/cn/app/jia-mian-ni-ming-bao-liao/id877136927")
+			}
+			else
+			{
+				$(".d_btn").attr("href","https://itunes.apple.com/cn/app/jia-mian-ni-ming-bao-liao/id877136927?l=zh?mt=8");
+			}
+		}
+		else
+		{
+			if(browser.versions.is_weixin())
+			{
+				$(".d_btn").attr("href","http://dd.myapp.com/16891/C2B9B17404A6F03CBA40CC2FF11020EB.apk?fsname=com%2Ejiamiantech%5F1%2E5%2E3%5F14.apk");
+			}
+		}
+
+		//评论点击
+		$('.items').on("click",function(){
+			$('.items').addClass("percent");
+			$('.b1').css("width","14%").closest("li").find(".icon").text("14%");
+			$('.b2').css("width","28%").closest("li").find(".icon").text("28%");
+			$('.b3').css("width","58%").closest("li").find(".icon").text("58%");
+			if(browser.versions.is_weixin())
+			{
+				$('.shodw').show();
+			}
+		});
+	</script>
+</body>
+</html>

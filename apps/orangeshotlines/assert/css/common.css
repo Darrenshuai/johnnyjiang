@@ -1,0 +1,57 @@
+body{font: 12px 'Microsoft yahei',Helvetica,Arial,Sans-serif;margin:0;padding:0;overflow: hidden;}
+.clearfix{display: block;/* clear:both; */}
+.clearfix:after{display: block;clear:both;content:'';}
+a,a:hover{cursor:pointer;text-decoration:none;}
+a img{border:0;}
+.head{height:660px;background:#267be5;}
+.wrap{position:relative;width:1200px;margin:0 auto;}
+.animate{position:absolute;}
+.logo{top:10px;left:20px;-webkit-animation:floattop 1s ease forwards;}
+.phone{top:115px;left:100px;-webkit-animation:floatbottom 1.5s ease forwards;}
+.fonts{top:200px;right:80px;-webkit-animation:floatright 1.5s ease forwards;-webkit-animation-delay:.5s;}
+.bts{top:490px;right:40px;}
+.tips{padding: 100px 0 40px;text-align:center;}
+.tips h3{font-size:30px;color:#474747;margin-bottom: 10px;}
+.tips p{font-size:15px;color:#c4c4c4;}
+.photowall a{display:inline-block;width: 24%;text-align:center;vertical-align:middle;}
+.photowall a img{width:100%;}
+.intro{margin-top: 30px; padding-bottom:30px; border-bottom: 1px solid #ddd;margin-bottom: 30px;}
+.intro .tit h4{font-size: 20px;text-align: center;color:#474747;margin-bottom: 10px;}
+.intro .tit p{text-align: center;color:#c4c4c4;font-size: 16px;}
+.hots{width:800px;margin:0 auto;margin-bottom: 30px;}
+.personinfo{float:left; width:400px;text-align:center;}
+.hotper{margin-left:600px;}
+.hotper a{display:block;width:80px;height: 80px;}
+.hotper a.face:hover{/* border:1px solid #ddd; */-webkit-transform:scale(1.2);}
+.hotper a img{display:block;width: 100%;}
+
+
+@media screen and (max-width:480px){
+	.wrap{width:98%;}
+}
+
+@media screen and (min-width: 481px) and (max-width:768px){
+	.wrap{width:98%;}
+}
+
+@media screen and (min-width:769px) and (max-width:1024px){
+	.wrap{width:95%;}
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	
+}
+
+@-webkit-keyframes floattop{
+	0%{-webkit-transform: translateY(-100px); opacity:0;},
+	100%{-webkit-transform: translateY(10px); opacity:1;}
+}
+@-webkit-keyframes floatright{
+	0%{-webkit-transform:translateX(1000px);opacity: 0;},
+	100%{-webkit-transform: translateX(0px); opacity:1;},
+}
+@-webkit-keyframes floatbottom{
+	0%{-webkit-transform:translateY(100px);opacity: 0;},
+	100%{-webkit-transform:translateY(0px);opacity: 1;}
+}
+@-webkit-keyframes hoverscale{
+}
