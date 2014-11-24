@@ -1,5 +1,5 @@
 html,body{font:12px 'Microsoft yahei',Helvetica,Arial,Sans-serif;margin:0;padding:0;width: 100%;height: 100%;}
-html,body,#carousel,#carousel>ul,#carousel>ul>li,#carousel dl,#carousel dt{position:relative;height:100%;margin:0;padding:0;overflow:hidden;}
+html,body,#carousel,#carousel>ul,#carousel>ul>li,#carousel dl,#carousel dt{position:relative;height:100%;margin:0;padding:0;}
 * {
 -webkit-animation-fill-mode: forwards!important;
 -moz-animation-fill-mode: forwards!important;
@@ -10,7 +10,7 @@ html,body,#carousel,#carousel>ul,#carousel>ul>li,#carousel dl,#carousel dt{posit
 #carousel>ul.animates,#carousel dl.animates{-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-o-transition:all .2s linear;transition:all .2s linear;}
 #carousel>ul,#carousel dl{-webkit-backface-visibility:hidden;-webkit-transform-style:preserve-3d;-webkit-box-shadow:0 0 20px rgba(0,0,0,.2);box-shadow:0 0 20px rgba(0,0,0,.2);-webkit-transform:translate3d(0%,0,0) scale3d(1,1,1);-moz-transform:translate3d(0%,0,0) scale3d(1,1,1);-ms-transform:translate3d(0%,0,0) scale3d(1,1,1);-o-transform:translate3d(0%,0,0) scale3d(1,1,1);transform:translate3d(0%,0,0) scale3d(1,1,1);}
 #carousel dl{position:absolute;top:0;}
-#carousel>ul>li,#carousel dt{width: 100%;-webkit-transform-style:preserve-3d;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);transform:translate3d(0,0,0);margin: 0 auto;}
+#carousel>ul>li,#carousel dt{width: 100%;-webkit-transform-style:preserve-3d;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);transform:translate3d(0,0,0);margin: 0 auto;overflow: hidden;}
 #carousel dt{float:left;}
 .vertical li{float:left;}
 .pc{overflow-x: hidden;}
