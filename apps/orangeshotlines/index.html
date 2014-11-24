@@ -10,79 +10,139 @@
 	<title>桔子热线-发现陌生的声音</title>
 	<link rel="stylesheet" type="text/css" href="assert/css/common.css" media="screen">
 	<script src="assert/js/jquery.min.js"></script>
+	<script src="assert/js/hammer.min.js"></script>
+	<script src="assert/js/carousel.js"></script>
 </head>
 <body>
-	<!--head-->
-	<div class="head">
-		<div class="wrap">
-			<div class="nav">
-				<h1 class="logo"><img src="assert/img/logo.png">桔子热线</h1>
-				<div class="nav-bar">
-					<a class="on" href="#">桔子app</a>|
-					<a href="#">关于我们</a>
+	<div class="pc">
+		<!--head-->
+		<div class="head">
+			<div class="wrap">
+				<div class="nav">
+					<h1 class="logo"><img src="assert/img/logo.png">桔子热线</h1>
+					<div class="nav-bar">
+						<a class="on" href="#">桔子app</a>|
+						<a href="#">关于我们</a>
+					</div>
 				</div>
-			</div>
-			<div class="animate fonts">
-				<img src="assert/img/fonts.png">
-			</div>
-			<div class="animate phone">
-				<img src="assert/img/phone.png">
-			</div>
-			<div class="animate downs">
-				<a class="downs_btn andriod" href="#" target="_blank"></a>
-				<a class="downs_btn ios" href="#" target="_blank"></a>
-				<a class="qcode"><img src="assert/img/qrcode.png" ></a>
-			</div>
-		</div>
-	</div>
-
-	<!--content-->
-	<div class="container pc">
-		<div class="wrap">
-			<div class="tips">
-				<h3>陪我聊天的陌生人电话</h3>
-				<p>进入桔子的世界，倾听陌生、有趣的声音</p>
-			</div>
-			<div class="photowall">
-				<a class="photos"><img src="assert/img/per_11.jpg" ></a>
-				<a class="photos"><img src="assert/img/per_13.jpg" ></a>
-				<a class="photos"><img src="assert/img/per_15.jpg"></a>
-				<a class="photos"><img src="assert/img/per_17.jpg" ></a>
-			</div>
-			<div class="intro">
-				<div class="box">
-					<h2 class="tit">产品亮点一</h2>
-					<p class="desc">产品量点一的文字介绍</p>
-					<p class="introimg"><img src="assert/img/ld.jpg"></p>
+				<div class="animates fonts">
+					<img src="assert/img/fonts.png">
 				</div>
-				<div class="box">
-					<h2 class="tit">产品亮点一</h2>
-					<p class="desc">产品量点一的文字介绍</p>
-					<p class="introimg"><img src="assert/img/ld.jpg"></p>
+				<div class="animates phone">
+					<img src="assert/img/phone.png">
 				</div>
-			</div>
-			<div class="con-ft">
-				<p class="bimg">
-					<img src="assert/img/logo.jpg" height="154" width="159"><br>
-					<strong>接通你电话的那个人会是谁？</strong>
-				</p>
-				<div class="downs d-bottom">
+				<div class="animates downs">
 					<a class="downs_btn andriod" href="#" target="_blank"></a>
 					<a class="downs_btn ios" href="#" target="_blank"></a>
 					<a class="qcode"><img src="assert/img/qrcode.png" ></a>
 				</div>
-				<p class="notes">适用于Android 4.0 / iOS 7.0及以上</p>
 			</div>
+		</div>
 
+		<!--content-->
+		<div class="container">
+			<div class="wrap">
+				<div class="tips">
+					<h3>陪我聊天的陌生人电话</h3>
+					<p>进入桔子的世界，倾听陌生、有趣的声音</p>
+				</div>
+				<div class="photowall">
+					<a class="photos"><img src="assert/img/per_11.jpg" ></a>
+					<a class="photos"><img src="assert/img/per_13.jpg" ></a>
+					<a class="photos"><img src="assert/img/per_15.jpg"></a>
+					<a class="photos"><img src="assert/img/per_17.jpg" ></a>
+				</div>
+				<div class="intro">
+					<div class="box">
+						<h2 class="tit">产品亮点一</h2>
+						<p class="desc">产品量点一的文字介绍</p>
+						<p class="introimg"><img src="assert/img/ld.jpg"></p>
+					</div>
+					<div class="box">
+						<h2 class="tit">产品亮点一</h2>
+						<p class="desc">产品量点一的文字介绍</p>
+						<p class="introimg"><img src="assert/img/ld.jpg"></p>
+					</div>
+				</div>
+				<div class="con-ft">
+					<p class="bimg">
+						<img src="assert/img/logo.jpg" height="154" width="159"><br>
+						<strong>接通你电话的那个人会是谁？</strong>
+					</p>
+					<div class="downs d-bottom">
+						<a class="downs_btn andriod" href="#" target="_blank"></a>
+						<a class="downs_btn ios" href="#" target="_blank"></a>
+						<a class="qcode"><img src="assert/img/qrcode.png" ></a>
+					</div>
+					<p class="notes">适用于Android 4.0 / iOS 7.0及以上</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!--foot-->
+		<div class="footer">
+			<div class="wrap">
+				<p>联系我们：admin@imjuzi.com	微博：@桔子热线app<br>
+				Copyright © 2014 imjuzi.com ALL rights reserved 沪ICP备12028487号-3</p>
+			</div>
 		</div>
 	</div>
 
-	<!--foot-->
-	<div class="footer">
-		<div class="wrap">
-			<p>联系我们：admin@imjuzi.com	微博：@桔子热线app<br>
-Copyright © 2014 imjuzi.com ALL rights reserved 沪ICP备12028487号-3</p>
+	<div class="mobile">
+		<a class="animates arrow"><img src="assert/img/arrow.png"></a>
+		<div class="mains" id="carousel">
+			<ul class="main-con">
+				<li class="panel1">
+					<h1 class="logo"><img src="assert/img/logo.png">桔子热线</h1>
+					<div class="panel-con">
+						<div class="animates fonts">
+							<img src="assert/img/fonts_m.png">
+						</div>
+						<div class="animates phone">
+							<img src="assert/img/phone.png">
+						</div>
+						<div class="animates downs">
+							<a class="downloadbt"><img src="assert/img/bt_iphone.png"></a>
+						</div>
+					</div>
+				</li>
+				<li class="pane2">
+					<div class="photowall" >
+						<h1 data-animation="fadeInDown 2s">陪我聊天的陌生人电话</h1>
+						<p data-animation="fadeInUp 2s">进入桔子的世界，倾听陌生、有趣的声音</p>
+						<div class="imgs">
+							<a class="pic" data-animation="floatUpl 2s"><img src="assert/img/per_11.jpg"></a>
+							<a class="pic" data-animation="floatUpr 2s"><img src="assert/img/per_13.jpg"></a>
+							<a class="pic" data-animation="floatDownl 2s"><img src="assert/img/per_15.jpg"></a>
+							<a class="pic" data-animation="floatDownr 2s"><img src="assert/img/per_17.jpg"></a>
+						</div>
+					</div>
+				</li>
+				<li class="pane3">
+					<div class="ldcont">
+						<h1 data-animation="fadeInDown 1s">产品亮点1</h1>
+						<p data-animation="fadeInUp 1.5s 1.5s">省流量，不连wifi也能聊</p>
+						<p class="con" data-animation="flipInX 2s 2s"></p>
+
+						<h1 data-animation="fadeInDown 2.5s 2.5s">产品亮点2</h1>
+						<p data-animation="fadeInUp 1.5s 3s">女生特权，边聊电话边收钱</p>
+						<p class="con" data-animation="flipInX 2s 3.5s"></p>
+					</div>
+					<div class="down">
+						<a><img class="logos" src="assert/img/logo.png"></a>
+						<a class="downloadbt"><img src="assert/img/bt_iphone.png"></a>
+					</div>
+					<p class="foot">Copyright©2014 桔子热线 联系我们：微博@桔子热线</p>
+				</li>
+			</ul>
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$(function(){
+		var carousel = new verDrag("#carousel");
+    	carousel.init();
+	})
+</script>
 </html>
