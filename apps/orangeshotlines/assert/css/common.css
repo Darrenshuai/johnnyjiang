@@ -82,13 +82,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	.mobile .ldcont h1{text-align:center;margin:10px 0;}
 	.mobile .ldcont p{text-align:center;font-size:1.2em;}
 	.mobile .ldcont p.con{background:#ddd;border-radius:6px;height:120px;width:80%;margin:0 auto;}
-	.mobile .down{margin-top:20px;text-align:center;line-height:70px;}
+	.mobile .down{/* margin-top:20px; */text-align:center;line-height:70px;}
 	.mobile .down .logos{display:inline-block;vertical-align:middle;}
 	.mobile .down a{display:inline-block;width:35%;vertical-align:middle;}
 	.mobile .down a.downloadbt img{display:inline-block;width:100%;vertical-align:middle;}
 	.mobile .mains{height:100%;}
 	.mobile .mains>ul{height:100%;}
-	.mobile .foot{color:#fff;background:#24262c;text-align:center;line-height:50px;margin:20px 0;}
+	.mobile .foot{color:#fff;background:#24262c;text-align:center;line-height:50px;margin: 13px 0;}
 }
 @media screen and (min-width:481px) and (max-width:768px){
 	.pc{display:none;}
