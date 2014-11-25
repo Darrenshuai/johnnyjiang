@@ -22,23 +22,27 @@ ul,li{list-style:none;margin:0;padding:0;}
 h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 .head { height: 660px; background: #267be5;}
 .wrap { position: relative; width: 1200px; margin: 0 auto; }
-.nav { position: relative; overflow: hidden; }
-.nav .logo { font-size: 30px; font-weight: normal; margin-top: 10px; float: left; width: 193px; color: #fff; }
+.nav { position: relative; overflow: hidden; background: #fff; padding-bottom: 10px;}
+.nav .logo { font-size: 30px; font-weight: normal; margin-top: 10px; float: left; width: 193px; color: #0d81e5; }
 .nav .logo img { display: inline-block; margin-right: 10px; vertical-align: middle; }
-.nav .nav-bar { float: right; margin-top: 40px; color: #fff; }
-.nav .nav-bar a { font-size: 14px; line-height: 20px; display: inline-block; margin: 0 10px; padding: 3px 7px; color: #fff; border-radius: 5px; }
-.nav .nav-bar a:hover, .nav .nav-bar a.on { background: #2972cf; }
+.nav .nav-bar { float: right; margin-top: 30px; color: #717171; }
+.nav .nav-bar a { font-size: 14px; line-height: 20px; display: inline-block; margin: 0 10px; padding: 3px 7px; color: #717171; border-radius: 5px; }
+.nav .nav-bar a:hover, .nav .nav-bar a.on { color: #fff; background: #2972cf; }
 .animates img { width: 100%; }
-.animates { position: absolute; }
-.phone { top: 115px; left: 100px; -webkit-animation: floatbottom 1.5s ease forwards; }
-.fonts { top: 200px; right: 80px; -webkit-animation: floatright 1.5s ease forwards; }
-.downs { top: 460px; right: 40px; }
+.animates{position:absolute;}
+.phone{top:115px;left:100px;-webkit-animation:floatbottom 1.5s ease forwards;}
+.fonts{top:200px;right:80px;-webkit-animation:floatright 1.5s ease forwards;}
+.downs{top:460px;right:40px;}
+.content{top:0;left:0;width:100%;color:#fff;display:none;}
+.content p{line-height:30px;font-size:16px;}
+.content i{position: absolute;right: 1%;font-size: 30px;font-style: normal;cursor: pointer;}
+
 .downs_btn { display: inline-block; width: 210px; height: 88px; margin: 0px 10px; vertical-align: middle; border-radius: 5px; background: url(../img/download_btns.png) no-repeat; }
 .downs_btn.andriod { background-position: -210px 0; }
 .downs_btn.andriod:hover { background-position: -210px -88px; }
 .downs_btn.ios:hover { background-position: 0 -88px; }
 .arrow{bottom: 2%;-webkit-animation: downAndup 1.5s linear infinite;width: 10%;left: 45%;cursor: pointer;}
-.qcode{display: inline-block;vertical-align: middle;margin-left: 10px;}
+.qcode{display: inline-block;vertical-align: middle;margin-left: 10px;/* border: 2px solid #fff; *//* border-radius: 6px; */}
 .tips { padding: 120px 0 40px; text-align: center; }
 .tips h3 { font-size: 30px; margin-bottom: 10px; color: #4a4a4a; }
 .tips p { font-size: 16px; color: #787878; }
@@ -50,9 +54,11 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 .intro .box .tit { font-size: 30px; }
 .intro .box p { font-size: 16px; }
 .intro .box p.desc{color:#b0b0b0;}
+.intro .box p img{width: 100%;}
 .con-ft{}
-.con-ft p.bimg{text-align:center;}
-.con-ft .bimg strong{font-size:20px;color:#6e6e6e;}
+.con-ft p.bimg{text-align:center;overflow: hidden;width: 220px;margin: 0 auto;font-size: 17px;line-height: 38px;color: #787878;}
+.con-ft p.bimg img{float: left;}
+.con-ft .bimg strong{font-size: 14px;color:#6e6e6e;}
 .con-ft .d-bottom{margin-top: 35px;text-align:center;}
 .con-ft .notes{text-align:center;}
 .footer{background:#267be4;text-align:center;}
@@ -78,17 +84,20 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	.mobile .photowall .imgs{margin-top:30px;}
 	.mobile .photowall .pic{display:inline-block;width:48%;text-align:center;margin:0 0.7%;}
 	.mobile .photowall .pic img{display:inline-block;width:100%;}
-	.mobile .ldcont{width:100%;padding-bottom:15px;border-bottom:1px solid #ddd;}
-	.mobile .ldcont h1{text-align:center;margin:10px 0;}
-	.mobile .ldcont p{text-align:center;font-size:1.2em;}
-	.mobile .ldcont p.con{background:#ddd;border-radius:6px;height:120px;width:80%;margin:0 auto;}
-	.mobile .down{/* margin-top:20px; */text-align:center;line-height:70px;}
-	.mobile .down .logos{display:inline-block;vertical-align:middle;}
-	.mobile .down a{display:inline-block;width:35%;vertical-align:middle;}
+	.mobile .ldcont{width:100%;padding-bottom:15px;border-bottom:1px solid #ddd;height: 100%;}
+	.mobile .ldcont .f1{top:2%;right:11%;width:41%;}
+	.mobile .ldcont .m1{top:2%;left:2%;width:55%;}
+	.mobile .ldcont .m2{bottom:23%;}
+	.mobile .ldcont .f2{top:33%;left:10%;width:80%;}
+	.mobile .ldcont .f1_1{top:12%;right:1%;width:40%;}
+	.mobile .mfoot{bottom: 0;width: 100%;}
+	.mobile .down{/* margin-top:20px; */text-align:center;line-height: 75px;border-top: 1px solid #ddd;margin: 0px 3%;}
+	.mobile .down .logos{display:inline-block;vertical-align:middle;width: 60%;}
+	.mobile .down a{display:inline-block;width: 28%;vertical-align:middle;}
 	.mobile .down a.downloadbt img{display:inline-block;width:100%;vertical-align:middle;}
 	.mobile .mains{height:100%;}
 	.mobile .mains>ul{height:100%;}
-	.mobile .foot{color:#fff;background:#24262c;text-align:center;line-height:50px;margin: 13px 0;}
+	.mobile .foot{color:#fff;background:#24262c;text-align:center;line-height:50px;margin: 0;}
 }
 @media screen and (min-width:481px) and (max-width:768px){
 	.pc{display:none;}
@@ -111,9 +120,12 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	.mobile .photowall .pic{display:inline-block;width:48%;text-align:center;margin:0 0.7%;}
 	.mobile .photowall .pic img{display:inline-block;width:100%;}
 	.mobile .ldcont{width:100%;padding-bottom:15px;border-bottom:1px solid #ddd;}
-	.mobile .ldcont h1{text-align:center;margin:10px 0;}
-	.mobile .ldcont p{text-align:center;font-size:1.2em;}
-	.mobile .ldcont p.con{background:#ddd;border-radius:6px;height:120px;width:80%;margin:0 auto;}
+	.mobile .ldcont .f1{top:2%;right:11%;width:41%;}
+	.mobile .ldcont .m1{top:2%;left:2%;width:55%;}
+	.mobile .ldcont .m2{bottom:23%;}
+	.mobile .ldcont .f2{top:33%;left:10%;width:80%;}
+	.mobile .ldcont .f1_1{top:12%;right:1%;width:40%;}
+	.mobile .mfoot{bottom: 0;width: 100%;}
 	.mobile .down{margin-top:20px;text-align:center;line-height:70px;}
 	.mobile .down .logos{display:inline-block;vertical-align:middle;}
 	.mobile .down a{display:inline-block;width:35%;vertical-align:middle;}
@@ -127,9 +139,9 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	.head{height:600px;}
 	.wrap{width:90%;}
 	.phone{left:0;width:270px;}
-	.fonts{right:0; /* width:455px; */}
+	.fonts{right:0; /* width:455px; */top: 150px;}
 	.fonts img{width:85%;}
-	.downs{right:-38px;}
+	.downs{right:-38px;top: 390px;}
 }
 @media screen and (min-width:1201px){
 	.mobile{display:none;}
@@ -152,7 +164,6 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	100%{-webkit-transform: translateY(-10px);}
 }
 
-/*向上淡出*/
 .fadeOutUp{-webkit-animation-name:fadeOutUp;-moz-animation-name:fadeOutUp;-o-animation-name:fadeOutUp;}
 @-webkit-keyframes fadeOutUp{0%{opacity:1;-webkit-transform:translateY(0)}
 100%{opacity:0;-webkit-transform:translateY(-20px);}}
@@ -162,13 +173,12 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 100%{opacity:0;-o-transform:translateY(-20px);}
  }
 
-/*下方淡入*/
 .fadeInUp{
-	-webkit-animation-name:fadeInUp;/*Safari 和 Chrome*/	
+	-webkit-animation-name:fadeInUp;/*Safari  Chrome*/	
 	-moz-animation-name:fadeInUp;/*Firefox*/
 	-o-animation-name:fadeInUp;/*Opera*/
 	}
-/*Safari 和 Chrome*/	
+/*Safari  Chrome*/	
 @-webkit-keyframes fadeInUp{0%{opacity:0;-webkit-transform:translateY(20px)}
 100%{opacity:1;-webkit-transform:translateY(0);}}
 /*Firefox*/
@@ -178,13 +188,12 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 @-o-keyframes fadeInUp{0%{opacity:0;-o-transform:translateY(20px)}
 100%{opacity:1;-o-transform:translateY(0);}}
 
-/*上方淡入*/
 .fadeInDown{
-	-webkit-animation-name:fadeInDown;/*Safari 和 Chrome*/	
+	-webkit-animation-name:fadeInDown;/*Safari  Chrome*/	
 	-moz-animation-name:fadeInDown;/*Firefox*/
 	-o-animation-name:fadeInDown;/*Opera*/
 }
-/*Safari 和 Chrome*/	
+/*Safari  Chrome*/	
 @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translateY(-20px)}
 100%{opacity:1;-webkit-transform:translateY(0)};}
 /*Firefox*/
@@ -194,13 +203,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 @-o-keyframes fadeInDown{0%{opacity:0;-o-transform:translateY(-20px);}
 100%{opacity:1;-o-transform:translateY(0);}}
 
-/*左方淡入*/
+
 .fadeInLeft{
-	-webkit-animation-name:fadeInLeft;/*Safari 和 Chrome*/
+	-webkit-animation-name:fadeInLeft;/*Safari  Chrome*/
 	-moz-animation-name:fadeInLeft;/*Firefox*/
 	-o-animation-name:fadeInLeft;/*Opera*/
 	}
-/*Safari 和 Chrome*/	
+/*Safari  Chrome*/	
 @-webkit-keyframes fadeInLeft{0%{opacity:0;-webkit-transform:translateX(-20px);}
 100%{opacity:1;-webkit-transform:translateX(0);}}
 /*Firefox*/
@@ -210,13 +219,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 @-o-keyframes fadeInLeft{0%{opacity:0;-o-transform:translateX(-20px);}
 100%{opacity:1;-o-transform:translateX(0);}}
 
-/*右边淡入*/
+
 .fadeInRight{
-	-webkit-animation-name:fadeInRight;/*Safari 和 Chrome*/	
+	-webkit-animation-name:fadeInRight;/*Safari  Chrome*/	
 	-moz-animation-name:fadeInRight;/*Firefox*/
 	-o-animation-name:fadeInRight;/*Opera*/
 	}
-/*Safari 和 Chrome*/	
+/*Safari  Chrome*/	
 @-webkit-keyframes fadeInRight{0%{opacity:0;-webkit-transform:translateX(20px);}
 100%{opacity:1;-webkit-transform:translateX(0);}}
 /*Firefox*/
@@ -226,13 +235,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 @-o-keyframes fadeInRight{0%{opacity:0;-o-transform:translateX(20px);}
 100%{opacity:1;-o-transform:translateX(0);}}
 
-/*底部淡入*/
+
 .fadeInUpBig{
-	-webkit-animation-name:fadeInUpBig;/*Safari 和 Chrome*/	
+	-webkit-animation-name:fadeInUpBig;/*Safari  Chrome*/	
 	-moz-animation-name:fadeInUpBig;/*Firefox*/
 	-o-animation-name:fadeInUpBig;/*Opera*/
 	}
-/*Safari 和 Chrome*/	
+	
 @-webkit-keyframes fadeInUpBig{0%{opacity:0;-webkit-transform:translateY(2000px);}
 100%{opacity:1;-webkit-transform:translateY(0);}}
 /*Firefox*/
@@ -242,13 +251,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 @-o-keyframes fadeInUpBig{0%{opacity:0;-o-transform:translateY(2000px);}
 100%{opacity:1;-o-transform:translateY(0);}}
 
-/*顶部淡入*/
+
 .fadeInDownBig{
--webkit-animation-name:fadeInDownBig;/*Safari 和 Chrome*/	
+-webkit-animation-name:fadeInDownBig;/*Safari  Chrome*/	
 -moz-animation-name:fadeInDownBig;/*Firefox*/
 -o-animation-name:fadeInDownBig;/*Opera*/
 }
-/*Safari 和 Chrome*/	
+	
 @-webkit-keyframes fadeInDownBig{0%{opacity:0;-webkit-transform:translateY(-2000px); }
 100%{opacity:1;-webkit-transform:translateY(0);}}
 /*Firefox*/
@@ -258,7 +267,7 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 @-o-keyframes fadeInDownBig{0%{opacity:0;-o-transform:translateY(-2000px);}
 100%{opacity:1;-o-transform:translateY(0);}}
 
-/*左上角飞入*/
+
 .floatUpl{-webkit-animation-name:floatUpl;-moz-animation-name: floatUpl;-o-animation-name: floatUpl;}
 @-webkit-keyframes floatUpl{
 	0%{-webkit-transform:translate3d(-50px,-50px,0);opacity:0;}
@@ -273,7 +282,7 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	100%{-o-transform:translate3d(0,0,0);opacity:1;}
 }
 
-/*又上角飞入*/
+
 .floatUpr{-webkit-animation-name:floatUpr;-moz-animation-name: floatUpr;-o-animation-name: floatUpr;}
 @-webkit-keyframes floatUpr{
 	0%{-webkit-transform:translate3d(50px,-50px,0);opacity:0;}
@@ -289,7 +298,7 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 }
 
 
-/*左下上角飞入*/
+
 .floatDownl{-webkit-animation-name:floatDownl;-moz-animation-name: floatDownl;-o-animation-name: floatDownl;}
 @-webkit-keyframes floatDownl{
 	0%{-webkit-transform:translate3d(-50px,50px,0);opacity:0;}
@@ -304,7 +313,6 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	100%{-o-transform:translate3d(0,0,0);opacity:1;}
 }
 
-/*右下上角飞入*/
 .floatDownr{-webkit-animation-name:floatDownr;-moz-animation-name: floatDownr;-o-animation-name: floatDownr;}
 @-webkit-keyframes floatDownr{
 	0%{-webkit-transform:translate3d(50px,50px,0);opacity:0;}
@@ -320,9 +328,8 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 }
 
 
-/*X轴淡入*/
 .flipInX{
-	/*Safari 和 Chrome*/
+	/*Safari Chrome*/
 	-webkit-backface-visibility:visible!important;
 	-webkit-animation-name:flipInX;
 	/*Firefox*/
@@ -332,8 +339,7 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	-o-backface-visibility:visible!important;
 	-o-animation-name:flipInX;
 	}
-/*Safari 和 Chrome*/	
-@-webkit-keyframes flipInX{0%{-webkit-transform:perspective(400px) rotateX(90deg);opacity:0}/*transition-property可以设置要以动画方式变换的CSS属性，默认值all表示变换所有的属性，如果只针对单个或者多个CSS属性进行变换，就可以用这个属性来进行单独设置。*/
+@-webkit-keyframes flipInX{0%{-webkit-transform:perspective(400px) rotateX(90deg);opacity:0}
 40%{-webkit-transform:perspective(400px) rotateX(-10deg)}
 70%{-webkit-transform:perspective(400px) rotateX(10deg)}
 100%{-webkit-transform:perspective(400px) rotateX(0deg);opacity:1}}
@@ -347,3 +353,29 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 40%{-o-transform:perspective(400px) rotateX(-10deg)}
 70%{-o-transform:perspective(400px) rotateX(10deg)}
 100%{-o-transform:perspective(400px) rotateX(0deg);opacity:1}}
+
+
+@-webkit-keyframes bouncein {
+	0% { opacity: 0; -webkit-transform: scale(.3); }
+	50% { opacity: 1; -webkit-transform: scale(1.05); }
+	70% { -webkit-transform: scale(.9); }
+	100% { -webkit-transform: scale(1); }
+}
+@-moz-keyframes bouncein {
+	0% { opacity: 0; -moz-transform: scale(.3); }
+	50% { opacity: 1; -moz-transform: scale(1.05); }
+	70% { -moz-transform: scale(.9); }
+	100% { -moz-transform: scale(1); }
+}
+@-o-keyframes bouncein {
+	0% { opacity: 0; -o-transform: scale(.3); }
+	50% { opacity: 1; -o-transform: scale(1.05); }
+	70% { -o-transform: scale(.9); }
+	100% { -o-transform: scale(1); }
+}
+@keyframes bouncein {
+	0% { opacity: 0; transform: scale(.3); }
+	50% { opacity: 1; transform: scale(1.05); }
+	70% { transform: scale(.9); }
+	100% { transform: scale(1); }
+}
