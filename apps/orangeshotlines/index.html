@@ -19,7 +19,7 @@
 		<div class="head">
 			<div class="nav">
 				<div class="wrap">
-					<h1 class="logo"><img src="assert/img/logo.png">桔子热线</h1>
+					<h1 class="logo"><img src="assert/img/logo.png"></h1>
 					<div class="nav-bar">
 						<a class="on" href="#">桔子app</a>|
 						<a href="javascript:void(0)" id="aboutus" fortab="">关于我们</a>
@@ -34,8 +34,8 @@
 					<img src="assert/img/phone.png">
 				</div>
 				<div class="animates downs">
-					<a class="downs_btn andriod" href="#" target="_blank"></a>
-					<a class="downs_btn ios" href="#" target="_blank"></a>
+					<a class="downs_btn andriod" href="http://juzi-install.qiniudn.com/juzi0.9.apk" target="_blank"></a>
+					<a class="downs_btn ios" href="javascript:void(0)" target="_blank"></a>
 					<a class="qcode"><img src="assert/img/qrcode.png" ></a>
 				</div>
 				<div class="animates content">
@@ -56,6 +56,7 @@
 					Email：admin@imjuzi.com<br><br>
 
 					违规咨询：xxx  提现咨询：xxx</p>
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=630792238&site=qq&menu=yes"><img src="assert/img/q_1.gif" style="width: 74px;" border="0" alt="点击咨询" title="点击咨询"></a>
 				</div>
 			</div>
 		</div>
@@ -110,7 +111,7 @@
 		<div class="mains" id="carousel">
 			<ul class="main-con">
 				<li class="panel1">
-					<h1 class="logo"><img src="assert/img/logo.png">桔子热线</h1>
+					<h1 class="logo"><img src="assert/img/logo.jpg"></h1>
 					<div class="panel-con">
 						<div class="animates fonts">
 							<img src="assert/img/fonts_m.png">
@@ -119,7 +120,7 @@
 							<img src="assert/img/phone.png">
 						</div>
 						<div class="animates downs">
-							<a class="downloadbt"><img src="assert/img/bt_iphone.png"></a>
+							<a class="downloadbt" href="http://juzi-install.qiniudn.com/juzi0.9.apk"><img src="assert/img/bt_iphone.png"></a>
 						</div>
 					</div>
 				</li>
@@ -144,8 +145,8 @@
 						<div class="animates m2" ><img src="assert/img/m2.png"></div>
 						<div class="animates mfoot">
 							<div class="down">
-								<a><img class="logos" src="assert/img/logo.png"></a>
-								<a class="downloadbt"><img src="assert/img/bt_iphone.png"></a>
+								<a><img class="logos" src="assert/img/logo2.jpg"></a>
+								<a class="downloadbt" href="http://juzi-install.qiniudn.com/juzi0.9.apk"><img src="assert/img/bt_iphone.png"></a>
 							</div>
 							<p class="foot">Copyright©2014 桔子热线 联系我们：微博@桔子热线</p>
 						</div>	
@@ -153,6 +154,11 @@
 				</li>
 			</ul>
 		</div>
+	</div>
+
+	<div class="modal">
+		<div class="mask"></div>
+		<div class="animates ioscode animated slideindown" style=""><img src="assert/img/ioscode.png"></div>
 	</div>
 </body>
 <script type="text/javascript">
@@ -162,6 +168,14 @@
        return {//移动终端浏览器版本信息
             android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
             iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+            is_weixin:function()
+            {
+				if(u.toLowerCase().match(/MicroMessenger/i)=="micromessenger") {
+					return true;
+			 	} else {
+					return false;
+				}
+            },
         };
      }(),
      language:(navigator.browserLanguage || navigator.language).toLowerCase()
@@ -170,14 +184,20 @@
 	$(function(){
 		var carousel = new verDrag("#carousel");
     	carousel.init();
-    	if(browser.versions.iPhone)
-		{
-			$(".downloadbt img").attr("src","assert/img/bt_iphone.png")
-		}
-		else
-		{
-			$(".downloadbt img").attr("src","assert/img/bt_android.png")
-		}
+			if(browser.versions.iPhone)
+			{
+				$('.downloadbt').attr('href','#');
+    			$(".downloadbt img").attr("src","assert/img/bt_iphone.png")
+			}
+			else
+			{
+				$(".downloadbt img").attr("src","assert/img/bt_android.png")
+				if(browser.versions.is_weixin())
+    			{
+    				$('.downloadbt').attr('href','http://mp.weixin.qq.com/mp/redirect?url=http://juzi-install.qiniudn.com/juzi0.9.apk#wechat_redirect');
+				}
+			}	
+		
 
 		$('#aboutus').click(function(event) {
 			$('.animates.phone').hide();
@@ -185,10 +205,16 @@
 			$(this).addClass('on').siblings('a').removeClass('on');
 		});
 
-		$('.animates.content i').click(function(event) {
+		$(".downs_btn.ios").click(function(event) {
+			$('.modal').show();
+		});
+
+		$('.content i').click(function(event) {
 			$(this).parent().hide();
 			$('.animates.phone').show();
-			$('#aboutus').removeClass('on');
+		});
+		$('.mask').click(function(event) {
+			$('.modal').hide();
 		});
 	});
 </script>
