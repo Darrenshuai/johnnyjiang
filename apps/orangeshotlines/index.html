@@ -116,7 +116,7 @@
 						<div class="animates fonts">
 							<img src="assert/img/fonts_m.png">
 						</div>
-						<div class="animates phone">
+						<div class="animates phone" data-animation="fadeinup 2s">
 							<img src="assert/img/phone.png">
 						</div>
 						<div class="animates downs">
@@ -129,10 +129,10 @@
 						<h1 data-animation="bouncein 2s">陪我聊天的陌生人电话</h1>
 						<p data-animation="fadeInUp 2s">进入桔子的世界，倾听陌生、有趣的声音</p>
 						<div class="imgs">
-							<a class="pic" data-animation="floatUpl 2s"><img src="assert/img/per_11.jpg"></a>
-							<a class="pic" data-animation="floatUpr 2s"><img src="assert/img/per_13.jpg"></a>
-							<a class="pic" data-animation="floatDownl 2s"><img src="assert/img/per_15.jpg"></a>
-							<a class="pic" data-animation="floatDownr 2s"><img src="assert/img/per_17.jpg"></a>
+							<a class="pic"><img src="assert/img/per_11.jpg"></a>
+							<a class="pic"><img src="assert/img/per_13.jpg"></a>
+							<a class="pic"><img src="assert/img/per_15.jpg"></a>
+							<a class="pic"><img src="assert/img/per_17.jpg"></a>
 						</div>
 					</div>
 				</li>
@@ -212,6 +212,7 @@
 		$('.content i').click(function(event) {
 			$(this).parent().hide();
 			$('.animates.phone').show();
+			$('#aboutus').removeClass('on');
 		});
 		$('.mask').click(function(event) {
 			$('.modal').hide();
