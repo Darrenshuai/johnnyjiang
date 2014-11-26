@@ -38,8 +38,10 @@
 					<a class="downs_btn ios" href="javascript:void(0)" target="_blank"></a>
 					<a class="qcode"><img src="assert/img/qrcode.png" ></a>
 				</div>
-				<div class="animates content">
-					<i>&times</i>
+				<div class="animates content flipInX" style="-webkit-animation-duration: 1s;">
+					<div class="bg_con"></div>
+					<div class="con">
+						<i>&times</i>
 					<p><strong>产品介绍：</strong><br>
 					桔子热线是国内最大的陌生人情感交流的平台 。颠覆陌陌、微聚等传统陌生人社交软件，支持用户直接<br>
 					通过语音进行沟通，交流情感、家长里短。更有女生特权，可以让女生在聊天的同时获得零花钱。<br>
@@ -55,8 +57,8 @@
 					官方微博：@桔子热线<br>
 					Email：admin@imjuzi.com<br><br>
 
-					违规咨询：xxx  提现咨询：xxx</p>
-					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=630792238&site=qq&menu=yes"><img src="assert/img/q_1.gif" style="width: 74px;" border="0" alt="点击咨询" title="点击咨询"></a>
+					违规咨询：xxx  提现咨询：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=369775530&site=qq&menu=yes"><img border="0" style="width:79px;vertical-align: middle;" src="http://wpa.qq.com/pa?p=2:369775530:51" alt="联系我们客服" title="联系我们客服"/></a></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -200,7 +202,6 @@
 		
 
 		$('#aboutus').click(function(event) {
-			$('.animates.phone').hide();
 			$('.animates.content').show();
 			$(this).addClass('on').siblings('a').removeClass('on');
 		});
@@ -210,9 +211,9 @@
 		});
 
 		$('.content i').click(function(event) {
-			$(this).parent().hide();
-			$('.animates.phone').show();
+			$('.content').hide();
 			$('#aboutus').removeClass('on');
+			$('.nav-bar a').eq(0).addClass('on');
 		});
 		$('.mask').click(function(event) {
 			$('.modal').hide();
