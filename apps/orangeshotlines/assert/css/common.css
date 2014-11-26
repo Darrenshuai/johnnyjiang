@@ -93,13 +93,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	.mobile .photowall h1{text-align:center;margin:10px 0;}
 	.mobile .photowall p{text-align:center;font-size:1.2em;}
 	.mobile .photowall .imgs{margin-top: 10px;}
-	.mobile .photowall .pic{display:inline-block;width: 40%;text-align:center;margin-top: 6%;margin-left: 6%;}
+	.mobile .photowall .pic{display:inline-block;width: 40%;text-align:center;margin-top: 6%;margin-left: 6%;opacity: 0;}
 	.mobile .photowall .pic img{display:inline-block;width:100%;}
 	.mobile .ldcont{width:100%;border-bottom:1px solid #ddd;height: 100%;}
-	.mobile .ldcont .f1{top: 6%;right: 25%;width: 32%;}
+	.mobile .ldcont .f1{top: 6%;right: 25%;width: 32%;opacity: 0;}
 	.mobile .ldcont .m1{top: 6%;left: 7%;width: 40%;}
 	.mobile .ldcont .m2{bottom: 31%;width: 74%;left: 13%;}
-	.mobile .ldcont .f2{top: 33%;left: 22%;width: 56%;}
+	.mobile .ldcont .f2{top: 33%;left: 22%;width: 56%;opacity: 0;}
 	.mobile .ldcont .f1_1{top: 15%;right: 16%;width: 32%;}
 	.mobile .mfoot{bottom: 0;width: 100%;}
 	.mobile .down{/* margin-top:20px; */text-align:center;line-height: 100px;border-top: 1px solid #ddd;margin: 0px 3%;}
