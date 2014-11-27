@@ -87,7 +87,7 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	.mobile .panel-con .animates img{}
 	.mobile .panel-con .phone{top:33%;left:5%;text-align:center;width:40%;}
 	.mobile .panel-con .fonts{top:38%;right:3%;-webkit-animation:floatright 1.5s ease forwards;width:48%;}
-	.mobile .panel-con .downs{top:108%;right:15%;width:30%;}
+	.mobile .panel-con .downs{top:108%;right: 11%;width: 37%;}
 	.mobile .arrow{bottom: 5%;-webkit-animation:downAndup 1.5s linear infinite;width:10%;left:45%;z-index:1000;}
 	.mobile .photowall{  height: 100%;}
 	.mobile .photowall h1{text-align:center;margin: 10px 0 3px;      }
