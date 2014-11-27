@@ -221,28 +221,13 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	-o-animation-name:fadeInUp;/*Opera*/
 	}
 /*Safari  Chrome*/	
-@-webkit-keyframes fadeInUp{0%{opacity:0;-webkit-transform:translateY(20px);}
+@-webkit-keyframes fadeInUp{0%{opacity:0;-webkit-transform:translateY(20px)}
 100%{opacity:1;-webkit-transform:translateY(0);}}
 /*Firefox*/
-@-moz-keyframes fadeInUp{0%{opacity:0;-moz-transform:translateY(20px);}
+@-moz-keyframes fadeInUp{0%{opacity:0;-moz-transform:translateY(20px)}
 100%{opacity:1;-moz-transform:translateY(0);}}
 /*Opera*/
-@-o-keyframes fadeInUp{0%{opacity:0;-o-transform:translateY(20px);}
-100%{opacity:1;-o-transform:translateY(0);}}
-
-.fadeInDown{
-	-webkit-animation-name:fadeInDown;/*Safari  Chrome*/	
-	-moz-animation-name:fadeInDown;/*Firefox*/
-	-o-animation-name:fadeInDown;/*Opera*/
-}
-/*Safari  Chrome*/	
-@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translateY(-20px);}
-100%{-webkit-transform:translateY(0)};opacity:1;}
-/*Firefox*/
-@-moz-keyframes fadeInDown{0%{opacity:0;-moz-transform:translateY(-20px);}
-100%{opacity:1;-moz-transform:translateY(0);}}
-/*Opera*/
-@-o-keyframes fadeInDown{0%{opacity:0;-o-transform:translateY(-20px);}
+@-o-keyframes fadeInUp{0%{opacity:0;-o-transform:translateY(20px)}
 100%{opacity:1;-o-transform:translateY(0);}}
 
 
@@ -421,6 +406,22 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0;}
 	70% { transform: scale(.9); }
 	100% { transform: scale(1); }
 }
+/*上方淡入*/
+.fadeInDown{
+	-webkit-animation-name:fadeInDown;/*Safari 和 Chrome*/	
+	-moz-animation-name:fadeInDown;/*Firefox*/
+	-o-animation-name:fadeInDown;/*Opera*/
+	}
+/*Safari 和 Chrome*/	
+@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translateY(-20px)}
+100%{opacity:1;-webkit-transform:translateY(0)}}
+/*Firefox*/
+@-moz-keyframes fadeInDown{0%{opacity:0;-moz-transform:translateY(-20px)}
+100%{opacity:1;-moz-transform:translateY(0)}}
+/*Opera*/
+@-o-keyframes fadeInDown{0%{opacity:0;-o-transform:translateY(-20px)}
+100%{opacity:1;-o-transform:translateY(0)}}
+
 .bouncein{ -webkit-animation-name: bouncein; -moz-animation-name: bouncein; -o-animation-name: bouncein; animation-name: bouncein; }
 
 @-webkit-keyframes slideindown {
