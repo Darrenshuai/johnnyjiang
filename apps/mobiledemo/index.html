@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>徽商银行2015校园招聘</title>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/global.css" rel="stylesheet">
+<link href="css/layout.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/hammer.min.js"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+    $(function() {
+    var e = $("#carousel"), x = $("#loading"), T = $("#loading_text"),
+        N = function() {
+            var e = ["images/p1_1.png","images/p1_2.png","images/p2_1.png","images/p3_03.png","images/p3_05.png","images/p3_06.png","images/p3_07.png","images/p4_07.png","images/p4_08.png","images/p4_10.png","images/p4_14.png","images/p5_04.png","images/p5_07.png","images/p5_10.png","images/p5_13.png","images/p6_07.png","images/p6_09.png","images/p6_12.png"], 
+            t = e.length, n = 0, // []内写入需要缓存的图片相对路径,以","分隔
+                r = function(e) {
+                    var r = new Image;
+                    r.onload = function() {
+                        ++n,
+                        T.text(parseInt(n / t * 100) + "%");
+                        if (parseInt(n / t * 100) == 100) {
+                            x.fadeOut();
+                            $("#carousel").fadeIn();
+                        }
+                    },
+                    r.src = e;
+                };
+            for (var i = 0; i < t; ++i) {r(e[i])};
+    }();    
+    var carousel = new verDrag("#carousel");
+    carousel.init();
+});
+</script>
+</head>
+<body>
+  <div class="wxmask">
+    <img src="images/wxshare.png" alt="">
+  </div>
+  <div id="loading" class="loading">
+        <p id="loading_text"></p>
+  </div>
+  <div class="arrow" id="arrow"><img src="images/arrow.png"></div>
+	<div id="carousel">
+	<ul> 
+	    <li class="pane1">
+         <section>
+            <h1 data-animation="fadeInUpBig 1s"><img src="images/p1_1.png"></h1>
+            <p data-animation="fadeInUp 2s"><img src="images/p1_2.png"></p>
+          </section>
+      </li>
+	    <li class="pane2">
+           <section>
+            <h1 data-animation="fadeInUpBig 1s"><img src="images/p1_1.png"></h1>
+            <p data-animation="fadeInDown 2s"><img src="images/p1_2.png"></p>
+            <p data-animation="bounceIn 2s" class="intro"><img src="images/p2_1.png"></p>
+          </section>
+      </li>
+      <li class="pane3">
+          <section>
+            <h1><img src="images/p3_1.png"/></h1>
+            <p class="p1" data-animation="fadeInLeftBig 1s"><img src="images/p3_03.png"></p>
+            <p class="p2" data-animation="fadeInRightBig 1s"><img src="images/p3_05.png"></p>
+            <p class="p3" data-animation="fadeInLeftBig 1s"><img src="images/p3_06.png"></p>
+            <p class="p4" data-animation="fadeInRightBig 1s"><img src="images/p3_07.png"></p>
+          </section>
+      </li>
+      <li class="pane4">
+        <section>
+            <h1><img src="images/p4_03.png"></h1>
+            <p class="p1" data-animation="fadeInUp 1s"><img src="images/p4_07.png" ></p>
+            <p class="p2" data-animation="fadeInUp 1s "><img src="images/p4_08.png" ><a id="hre1" href="http://special.zhaopin.com/nj/2014/11045/hsyh112818/xq.html" target="_blank"></a></p>
+            <p class="p3" data-animation="flipInX 1s 1s"><img src="images/p4_10.png" ><a id="hre2" href="http://special.zhaopin.com/nj/2014/11045/hsyh112818/xq.html" target="_blank"></a></p>
+            <p class="p4" data-animation="flipInX 1s 1s"><img src="images/p4_14.png" ></p>
+        </section>
+      </li>
+      <li class="pane5">
+        <section>
+            <h1><img src="images/p5_03.png"></h1>
+            <p class="p4" data-animation="bounceInUp 1s"><img src="images/p5_04.png"></p>
+            <p class="p1"  data-animation="flipInX 1s"><img src="images/p5_07.png"></p>
+            <p class="p2"  data-animation="fadeInUp 1s"><img src="images/p5_10.png"></p>
+            <p class="p3"  data-animation="bounceIn 2s"><img src="images/p5_13.png"><a id="hre3" href="http://special.zhaopin.com/nj/2014/11045/hsyh112818/xq.html" target="_blank"></a></p>
+        </section>
+      </li>
+      <li class="pane6">
+        <section>
+            <h1><img src="images/p6_03.png"></h1>
+            <p class="p1"><img src="images/p6_07.png"></p>
+            <p class="p2" data-animation="flipInX 1s"><img src="images/p6_09.png"></p>
+            <p class="p3"><img src="images/p6_12.png"></p>
+            <div class="share">
+              <a class="a1" href="index.html" data-animation="rotateIn 1s"><img src="images/home.png"></a>
+              <a class="shbt a2" href="javascript:void(0)" data-animation="rotateIn 1s"><img src="images/sinna.png"></a>
+              <a class="shbt a3" href="javascript:void(0)" data-animation="rotateIn 1s"><img src="images/pshare.png"></a>
+            </div>
+        </section>
+      </li>
+  </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  $(function(){
+    $('.shbt').click(function() {
+        $('.wxmask').show();
+    });
+  })
+</script>
+</html>
