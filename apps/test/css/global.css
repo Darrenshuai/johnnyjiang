@@ -1,0 +1,213 @@
+/*  滚动容器  */
+
+*{
+    -webkit-animation-fill-mode:forwards!important;
+}
+
+html,
+body,
+#carousel,
+#carousel>ul,
+#carousel>ul>li,
+#carousel dl,
+#carousel dt
+{
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#carousel
+{           
+    background: #c5e9f5;
+    overflow: hidden;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective:1000px;
+       -moz-transform: translate3d(0,0,0) scale3d(1,1,1);
+            transform: translate3d(0,0,0) scale3d(1,1,1); 
+}
+
+#carousel>ul.animate,#carousel dl.animate
+{
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+         -o-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+#carousel>ul,#carousel dl
+{    
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.2);
+            box-shadow: 0 0 20px rgba(0,0,0,.2);
+    -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+       -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+        -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+         -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+            transform: translate3d(0%,0,0) scale3d(1,1,1);
+}
+
+#carousel dl
+{
+    position: absolute;
+    top: 0;
+}
+
+#carousel>ul>li,#carousel dt
+{   
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translate3d(0,0,0);
+       -moz-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+}
+
+#carousel dt{
+    float: left;
+}
+
+.vertical li{
+    float: left;
+}
+
+#carousel li img{
+    width: 100%;
+    vertical-align: bottom;
+    font-size:0;
+    border: 0;
+}
+
+/*  指示器  */
+
+.nav
+{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+
+    margin-left: -25px;
+}
+
+.nav i
+{
+    display: block;
+    float: left;
+
+    width: 5px;
+    height: 5px;
+    margin: 0 5px 0 0;
+
+    border-radius: 50%;
+    background: #fff;
+}
+
+.nav i.current
+{
+    background: #68ab08;
+}
+
+/*  loading页  */
+
+.loading
+{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    background: #333;
+    z-index: 9999;
+}
+
+.loading p
+{
+    font: 100px/1.5 Helvetica;
+
+    position: absolute;
+    top: 50%;
+
+    width: 100%;
+    margin-top: -75px;
+
+    text-align: center;
+
+    color: #fff;
+}
+
+/*  tab 切换  */
+
+.nav_tab{
+    width: 100%;
+    height: 15%;
+    display: -moz-box; 
+    display: -webkit-box; 
+    display: box;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav_tab>div{
+    height: 100%;
+    margin: 0 1px 0 0;
+    padding: 0;
+    text-align: center;
+    -moz-box-flex: 1; 
+    -webkit-box-flex: 1; 
+    box-flex: 1;
+    display: -moz-box; 
+    display: -webkit-box; 
+    display: box;
+    -moz-box-align: center; 
+    -webkit-box-align: center; 
+    box-align: center;
+    -moz-box-pack: center; 
+    -webkit-box-pack: center; 
+    box-pack: center;
+    background: rgba(0,0,0,0.3);
+}
+
+.nav_tab>div:last-child{
+    margin-right: 0;
+}
+
+.nav_tab>div.current{
+    color:#fff;
+}
+
+.up_arrow,.back_arrow{    
+    position: fixed;
+    width: 100%;
+    bottom: 5%;
+    text-align: center;
+	cursor:pointer;
+    z-index: 999;
+    -webkit-animation:floatUpDown linear 1.5s infinite;
+    -moz-animation:floatUpDown linear 1.5s infinite;
+    -o-animation:floatUpDown linear 1.5s infinite;
+    animation:floatUpDown linear 1.5s infinite;
+}
+
+.up_arrow img,.back_arrow img{
+    width:10%;
+}
+
+.wxmask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+    display: none;
+}
+
+.wxmask img{
+    float: right;
+}

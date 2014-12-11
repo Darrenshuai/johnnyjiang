@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="UTF-8">
+	<title>测试滑动</title>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="ham-con" id="testham">
+		<div class="con-inner">
+			<section style="background: aqua;">111</section>
+			<section style="background: antiquewhite;">22</section>
+			<section style="background: aquamarine;">3</section>
+			<section>14</section>
+		</div>
+	</div>
+</body>
+<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript"  src="js/hammer.min.js"></script>
+<script type="text/javascript" src="js/swipeapp.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var app=new SwipeApp('testham','section');
+		app.init();
+	})
+</script>
+</html>
