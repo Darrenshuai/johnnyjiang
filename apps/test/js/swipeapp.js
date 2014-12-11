@@ -78,8 +78,12 @@ var SwipeApp = function(ele, tag) {
 			hammer.get('swipe').set({
 				enable: true
 			});
-			hammer.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-			hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+			hammer.get('pan').set({
+				direction: Hammer.DIRECTION_ALL
+			});
+			hammer.get('swipe').set({
+				direction: Hammer.DIRECTION_VERTICAL
+			});
 
 			hammer.on('panup pandown release panend', this.handlePan);
 
@@ -98,13 +102,10 @@ var SwipeApp = function(ele, tag) {
 				case 'pandown':
 					break;
 				case 'panend':
-					if(event.offsetDirection==8)
-					{
-						_$self.next();
-					}
-					else if(event.offsetDirection==16)
-					{
+					if (event.offsetDirection == 8) {
 						_$self.prev();
+					} else if (event.offsetDirection == 16) {
+						_$self.next();
 					}
 					break;
 			}
