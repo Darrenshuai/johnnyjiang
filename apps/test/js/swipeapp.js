@@ -17,13 +17,14 @@ var SwipeApp = function(ele, tag) {
 		container.find(tag).each(function(i) {
 			$(this).height(tagheight);
 		});
+		container.height(tagheight * totaltag);
 	};
 
 	//移动屏幕
-	var handleContainer = function(perh) {
+	this.handleContainer = function(perh) {
 		container.css({
-			"transform": 'translate3d(0,' + perh + 'px,0)',
-			'-webkit-transform': 'translate3d(0,' + perh + 'px,0)'
+			"transform": 'translate3d(0,' + perh + '%,0)',
+			'-webkit-transform': 'translate3d(0,' + perh + '%,0)'
 		});
 	};
 	//页面高宽设置函数
@@ -46,8 +47,8 @@ var SwipeApp = function(ele, tag) {
 	var showPane = function(index, animate) {
 		var index = Math.max(0, Math.min(index, totaltag - 1));
 		current_pane = index;
-		var offsets = -(current_pane * tagheight);
-		handleContainer(offsets);
+		var offsets = -((100 / totaltag) * current_pane);
+		_$self.handleContainer(offsets);
 		//setContainerOffset(offset, animate);
 		//giveAnimate();
 	};
@@ -66,10 +67,7 @@ var SwipeApp = function(ele, tag) {
 		init: function(options) {
 
 			var defaultOptions = {
-				drag: true,
-				drag_block_horizontal: true,
-				drag_block_vertical: true,
-				drag_lock_to_axis: true
+				touchActions: ['auto', 'pan-y', 'pan-x', 'pan-x pan-y', 'none']
 			};
 
 			$.extend(true, defaultOptions, options);
@@ -78,6 +76,8 @@ var SwipeApp = function(ele, tag) {
 			hammer.get('swipe').set({
 				enable: true
 			});
+
+
 			hammer.get('pan').set({
 				direction: Hammer.DIRECTION_ALL
 			});
@@ -85,28 +85,27 @@ var SwipeApp = function(ele, tag) {
 				direction: Hammer.DIRECTION_VERTICAL
 			});
 
-			hammer.on('panup pandown release panend', this.handlePan);
-
-			// hammer.on('princh', this.handlePrinch);
-			// hammer.on('press', this.handlePress);
-			// hammer.on('rotate', this.handleRotate);
-			hammer.on('swipe', this.handleSwipe);
+			hammer.on('panmove panend', this.handlePan);
 			//初始化高度
 			handleHeight();
 		},
 		handlePan: function(event) {
-			//console.log(event.type);
+			console.log(event.type);
 			switch (event.type) {
-				case 'panup':
-					break;
-				case 'pandown':
+				case 'panmove':
+					var pane_offset = -(100 / totaltag) * current_pane;
+					var drag_offset = ((100 / tagheight) * event.deltaY) / totaltag;
+
+					// 首末页减速
+					if ((current_pane == 0) || (current_pane == totaltag - 1)) {
+						drag_offset *= .1;
+					}
+					_$self.handleContainer(drag_offset + pane_offset);
 					break;
 				case 'panend':
 					if (event.offsetDirection == 8) {
-						alert('up');
 						_$self.prev();
 					} else if (event.offsetDirection == 16) {
-						alert('down');
 						_$self.next();
 					}
 					break;
