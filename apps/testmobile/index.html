@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>聘没钱也想任性的90后！90后大师培养计划</title>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/global.css" rel="stylesheet">
+<link href="css/layout.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/hammer.min.js"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
+<script type="text/javascript" src="js/main.js?v=1212"></script>
+<script>
+    $(function() {
+    var e = $("#carousel"), x = $("#loading"), T = $("#loading_text"),
+        N = function() {
+            var e = ['images/p1.jpg', 'images/p1_02.png', 'images/p1_04.png', 'images/p1_05.png', 'images/p1_06.png', 'images/p1_07.png', 'images/p2.jpg', 'images/p2_02.png', 'images/p2_02.png', 'images/p2_03.png', 'images/p2_04.png', 'images/p2_05.png', 'images/p2_06.png', 'images/p3.jpg', 'images/p3_01.png', 'images/p3_02.png', 'images/p3_03.png', 'images/p3_04.png', 'images/p3_05.png', 'images/p3_09.png', 'images/p3_08.png', 'images/p3_10.png', 'images/p3_12.png', 'images/p3_07.png', 'images/p3_15.png', 'images/p3_16.png', 'images/p4_03.png', 'images/p4_05.png', 'images/p4_08.png', 'images/p4_5.jpg', 'images/p4_09.png', 'images/p5_03.png', 'images/p5_05.png', 'images/p5_08.png', 'images/p5_09.png', 'images/p6.jpg', 'images/p7.jpg', 'images/p8.jpg', 'images/p6_03.png', 'images/p6_10.png', 'images/p6_06.png', 'images/p6_07.png', 'images/p6_08.png', 'images/p7_02.png', 'images/p7_03.png', 'images/p7_06.png', 'images/p7_05_0.png', 'images/p7_05_1.png', 'images/p7_05_2.png', 'images/p8_02.png', 'images/p8_03.png', 'images/p8_04.png', 'images/p8_06.png', 'images/p8_07.png', 'images/p8_08.png', 'images/wxshare.png'], 
+            t = e.length, n = 0,
+                r = function(e) {
+                    var r = new Image;
+                    r.onload = function() {
+                        ++n;
+                        //T.text(parseInt(n / t * 100) + "%");
+                        if (parseInt(n / t * 100) == 100) {
+                            
+                            x.find('.loadingimg').fadeOut(100,function(){
+                                 x.find('.loadingimgComp').fadeIn();
+                                setTimeout(function(){
+                                x.fadeOut();
+                                $("#carousel").fadeIn();
+                               var carousel = new verDrag("#carousel");
+                              carousel.init();
+                              }, 1000);
+                            });                            
+                        }
+                    },
+                    r.src = e;
+                };
+            for (var i = 0; i < t; ++i) {r(e[i])};
+    }();    
+});
+</script>
+</head>
+<body>
+  <div class="wxmask">
+    <img src="images/wxshare.png" alt="">
+  </div>
+  <div id="loading" class="loading">
+  <p class="loadingimg"><img src="images/loading.gif" style="display: block;width: 100%;"></p>
+  <p class="loadingimgComp" style="display: none;"><img src="images/complete.gif" style="width: 100%;"></p>
+      <!-- <p id="loading_text"></p> -->
+  </div>
+  <div class="arrow" id="arrow"><img src="images/arr.png"></div>
+	<div id="carousel">
+	<ul> 
+	    <li class="pane1">
+          <div class="stage">
+            <p class="p1" data-animation="fadeIn 1s 1s"><img src="images/p1_02.png"></p>
+            <p class="p2" data-animation="fadeInUp 1s"><img src="images/p1_04.png"></p>
+            <p class="p3" data-animation="fadeInUp 1s"><img src="images/p1_05.png"></p>
+            <p class="p4" data-animation="fadeInLeftBig 1s"><a id="nextp" class="nextbtn"><img src="images/p1_06.png"></a></p>
+            <p class="p5"><img src="images/p1_07.png"></p>
+        </div>
+     </li>
+	    <li class="pane2"><div class="stage">
+        <p class="p1" data-animation="fadeInUp 1s"><img src="images/p2_02.png"></p>
+        <p class="p2" data-animation="fadeInUp 1s 1s"><img src="images/p2_03.png"></p>
+        <p class="p3" data-animation="fadeInUp 1s 0.3s"><img src="images/p2_04.png"></p>
+        <p class="p4" data-animation="fadeInUp 1s 0.6s"><img src="images/p2_05.png"></p>
+        <p class="p5" data-animation="fadeInUp 1s 0.9s"><img src="images/p2_06.png"></p>
+         <p class="p6"><img src="images/p1_07.png"></p>
+     </div> </li>
+      <li class="pane3"><div class="stage">
+        <p class="p1"><img src="images/p3_01.png"></p>
+        <div class="mains">
+          <p data-animation="fadeInUp 1s"><img src="images/p3_02.png"></p>
+          <p data-animation="bounceIn 1s"><img src="images/p3_03.png"></p>
+          <p data-animation="fadeInUp 1s"><img src="images/p3_04.png"></p>
+          <p data-animation="fadeInUp 1s"><img src="images/p3_05.png"></p>
+          <p data-animation="fadeInUp 1s 0.3s"><img src="images/p3_07.png"></p>
+          <p data-animation="fadeInUp 1s 0.6s"><img src="images/p3_08.png"></p>
+          <p class="p4" data-animation="fadeInUp 1s 0.9s"><img src="images/p3_12.png"></p> 
+          <p class="p6" data-animation="fadeInUp 1s 1s"><img src="images/p3_10.png"></p>
+          <p class="p10" data-animation="fadeInUp 1s 1.2s"><img src="images/p3_15.png"></p> 
+        </div>
+        <p class="p11"><img src="images/p3_16.png"></p> 
+      </div> </li>
+      <li class="pane4"><div class="stage">
+        <p class="p1" data-animation="fadeInUp"><img src="images/p4_03.png"></p>
+        <p class="p2" data-animation="flipInY 1s 0.3s"><img src="images/p4_05.png"></p>
+        <p class="p3" data-animation="fadeInUp 1s 0.6"><img src="images/p4_08.png"></p>
+        <p class="p4"><img src="images/p4_09.png"></p>
+      </div> </li>
+      <li class="pane5"><div class="stage">
+        <p class="p1"  data-animation="fadeInUp"><img src="images/p5_03.png"></p>
+        <p class="p2" data-animation="fadeInUp 1s 0.3s"><img src="images/p5_05.png"></p>
+        <p class="p3" data-animation="fadeInUp 1s 0.6s"><img src="images/p5_08.png"></p>
+        <p class="p4"><img src="images/p5_09.png"></p>
+      </div> </li>
+      <li class="pane6"><div class="stage">
+        <p class="p1" data-animation="fadeInUp"><img src="images/p6_03.png"></p>
+        <p class="p2" data-animation="fadeInUp 1s 0.3s"><img src="images/p6_06.png"></p>
+        <p class="p3" data-animation="fadeInUp 2s 0.6s"><img src="images/p6_08.png"></p>
+        <p class="p4"><img src="images/p6_10.png"></p>
+        <p class="p5"><img src="images/p6_07.png"></p>
+      </div> </li>
+      <li class="pane7"><div class="stage">
+        <p class="p1" data-animation="fadeInUp 1s"><img src="images/p7_02.png"></p>
+        <p class="p7"><img src="images/p7_06.png"></p>
+        <div class="resume">
+            <div class="music">
+              <p class="p2"><img src="images/p7_03.png"></p>
+              <p class="p3"><img src="images/p7_05.png"></p>
+              <p class="p5"><img src="images/p7_05_1.png"></p>
+              <p class="p6"><img src="images/p7_05_2.png"></p>
+            </div>
+          </div>
+        </div> </li>
+      <li class="pane8"><div class="stage">
+        <div class="mains">
+          <p data-animation="fadeInUp"><img src="images/p8_02.png"></p>
+          <p data-animation="fadeInUp 1.5s 0.3s"><img src="images/p8_03.png"></p>
+          <p data-animation="fadeInUp 2s 0.6s"><img src="images/p8_04.png"></p>
+          <p data-animation="fadeInUp 2s 0.9s"><a href="mailto:tracy.qi@zhaopin.com.cn"><img src="images/p8_06.png"></a></p>
+          <p data-animation="fadeInUp 2s 1.2s"><img src="images/p8_07.png"></p>
+        </div>
+        <p class="p6"><img src="images/p8_08.png"></p>
+      </div> </li>
+  </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  $(function(){
+    $('.shbt').click(function() {
+        $('.wxmask').show();
+    });
+  })
+</script>
+</html>
