@@ -95,7 +95,7 @@ var SwipeApp = function(ele, tag) {
 			handleHeight();
 		},
 		handlePan: function(event) {
-			console.log(event.type);
+			//console.log(event.type);
 			switch (event.type) {
 				case 'panup':
 					break;
@@ -103,8 +103,10 @@ var SwipeApp = function(ele, tag) {
 					break;
 				case 'panend':
 					if (event.offsetDirection == 8) {
+						alert('up');
 						_$self.prev();
 					} else if (event.offsetDirection == 16) {
+						alert('down');
 						_$self.next();
 					}
 					break;
