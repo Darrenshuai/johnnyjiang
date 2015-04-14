@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="gb2312">
+<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html;" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
@@ -14,7 +14,7 @@
 <meta name="format-detection" content="telephone=no; email=no" /> 
 <meta name="x5-fullscreen" content="true"/> 
 <meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi">
-<title>万万没想到，还有此等好工作!</title>
+<title>涓囦竾娌℃兂鍒帮紝杩樻湁姝ょ瓑濂藉伐浣�!</title>
 <link rel="stylesheet" href="normalize.css">
 <link href="h5.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -265,8 +265,8 @@
 
         wx.ready(function() {
             var wxData = {
-                title: '万万没想到，还有此等好工作!',
-                desc: '智联招聘设计服务中心招人ing',
+                title: '涓囦竾娌℃兂鍒帮紝杩樻湁姝ょ瓑濂藉伐浣�!',
+                desc: '鏅鸿仈鎷涜仒璁捐鏈嶅姟涓績鎷涗汉ing',
                 link: 'http://special.zhaopin.com/h5/sh/2015/sjfwzx031997/',
                 imgUrl: 'http://special.zhaopin.com/h5/sh/2015/sjfwzx031997/images/wx.jpg'
             }
@@ -299,35 +299,35 @@
                 }
             });
             wx.onMenuShareTimeline({
-                title: wxData.title, // 分享标题
-                link: wxData.link, // 分享链接
-                imgUrl: wxData.imgUrl, // 分享图标
+                title: wxData.title, // 鍒嗕韩鏍囬
+                link: wxData.link, // 鍒嗕韩閾炬帴
+                imgUrl: wxData.imgUrl, // 鍒嗕韩鍥炬爣
                 success: function() {
                     $('.sharepic').hide();
                 }
             });
             wx.onMenuShareQQ({
-                title: wxData.title, // 分享标题
-                desc: wxData.desc, // 分享描述
-                link: wxData.link, // 分享链接
-                imgUrl: wxData.imgUrl, // 分享图标
+                title: wxData.title, // 鍒嗕韩鏍囬
+                desc: wxData.desc, // 鍒嗕韩鎻忚堪
+                link: wxData.link, // 鍒嗕韩閾炬帴
+                imgUrl: wxData.imgUrl, // 鍒嗕韩鍥炬爣
                 success: function() {
                    $('.sharepic').hide();
                 },
                 cancel: function() {
-                    // 用户取消分享后执行的回调函数
+                    // 鐢ㄦ埛鍙栨秷鍒嗕韩鍚庢墽琛岀殑鍥炶皟鍑芥暟
                 }
             });
             wx.onMenuShareWeibo({
-                title: wxData.title, // 分享标题
-                desc: wxData.desc, // 分享描述
-                link: wxData.link, // 分享链接
+                title: wxData.title, // 鍒嗕韩鏍囬
+                desc: wxData.desc, // 鍒嗕韩鎻忚堪
+                link: wxData.link, // 鍒嗕韩閾炬帴
                 imgUrl: wxData.imgUrl,
                 success: function() {
                     $('.sharepic').hide();
                 },
                 cancel: function() {
-                    // 用户取消分享后执行的回调函数
+                    // 鐢ㄦ埛鍙栨秷鍒嗕韩鍚庢墽琛岀殑鍥炶皟鍑芥暟
                 }
             });
         });
