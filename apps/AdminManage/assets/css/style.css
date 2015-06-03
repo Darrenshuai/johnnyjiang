@@ -5475,3 +5475,49 @@ div.checker.disabled:hover,
 div.radio.disabled:hover {
     cursor: not-allowed;  
 }
+label.font{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 34px;
+}
+label.more{
+    display: inline-block;
+  color: #4B8DF8;
+}
+div.type1,div.type2{
+  display: inline-block;
+  vertical-align: middle;
+    margin-top: -3px;
+}
+input.m-wrap.txt-t{
+  margin:0;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.numeric{
+  height: 38px;
+  line-height: 38px;
+}
+.input-append.date.form_datetime{
+  margin:0;
+}
+select.m-wrap.formsel{
+   margin: -3px 0 0;
+   width: 70px;
+}
+.numeric a.btn{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.m-wrap.medium {
+  width: 195px !important;
+}
+.portlet.box > .portlet-title > .tools{
+    margin-top: -5px;
+}
+.checkbox.friend{
+  display: inline;
+}
+td.group img{margin-bottom: 10px;}
