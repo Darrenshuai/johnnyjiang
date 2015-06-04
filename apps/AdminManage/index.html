@@ -58,11 +58,17 @@
 				<li>
 					<div class="sidebar-toggler hidden-phone"></div>
 				</li>
-				<li class="start active">
+				<li >
+					<a href="dataanalysis.html">
+					<i class="fa fa-bar-chart"></i> 
+					<span class="title">数据统计分析</span>
+					</a>
+				</li>
+				<li class="active">
 					<a href="index.html">
 						<i class="fa fa-user"></i> 
 						<span class="title">用户管理</span>
-						<span class="arrow "></span>
+						<span class="arrow"></span>
 					</a>
 					<ul class="sub-menu">
 						<li >
@@ -73,22 +79,16 @@
 						</li>
 					</ul>
 				</li>
-				<li >
+				<li>
 					<a href="phonequery.html">
 					<i class="fa fa-phone"></i> 
 					<span class="title">通话记录查询</span>
 					</a>
 				</li>
-				<li >
-					<a href="dataanalysis.html">
-					<i class="fa fa-bar-chart"></i> 
-					<span class="title">数据统计分析</span>
-					</a>
-				</li>
 				<li>
 					<a href="friendcheck.html">
 					<i class="fa fa-check-square-o"></i> 
-					<span class="title">好友申请审核</span>
+					<span class="title">待审核好友列表</span>
 					</a>
 				</li>
 			</ul>
@@ -113,7 +113,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="fa fa-home"></i>
-								<a href="index.html">首页</a> 
+								<a href="dataanalysis.html">首页</a> 
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
@@ -146,12 +146,12 @@
 														<input type="radio" value="1" name="userIdRadio"/> 范围搜索
 													</label>
 													<div class="type1">
-														<input type="text" class="m-wrap span4 medium" >
+														<input type="text" class="m-wrap span3 medium" >
 													</div>
 													<div class="type2" style="display:none">
-														<input type="text" class="m-wrap span4" name="minUserId">
+														<input type="text" class="m-wrap w65" name="minUserId">
 														<label class="font">～</label>
-														<input type="text" class="m-wrap span4" name="maxUserId">
+														<input type="text" class="m-wrap w65" name="maxUserId">
 													</div>
 												</div>
 											</div>
@@ -160,7 +160,7 @@
 											<div class="control-group">
 												<label class="control-label">性别:</label>
 												<div class="controls">
-													<select class="m-wrap medium" name="gender">
+													<select class="m-wrap zd" name="gender">
 														<option value="0">不限</option>
 														<option value="1">男</option>
 														<option value="2">女</option>
@@ -174,9 +174,9 @@
 											<div class="control-group">
 												<label class="control-label">总通话时长:</label>
 												<div class="controls">
-													<input type="text" class="m-wrap span4 medium" placeholder=""> 秒
+													<input type="text" class="m-wrap w100" placeholder=""> 秒
 													<label class="font">～</label>
-													<input type="text" class="m-wrap span4 medium" placeholder=""> 秒
+													<input type="text" class="m-wrap w100" placeholder=""> 秒
 												</div>
 											</div>
 										</div>
@@ -184,7 +184,7 @@
 											<div class="control-group">
 												<label class="control-label">用户签名关键字:</label>
 												<div class="controls">
-													<input type="text" class="m-wrap medium" name="minReportCount">
+													<input type="text" class="m-wrap" name="minReportCount">
 												</div>
 											</div>
 										</div>
@@ -194,9 +194,9 @@
 											<div class="control-group">
 												<label class="control-label">被举报次数:</label>
 												<div class="controls">
-													<input type="text" class="m-wrap span4 medium" placeholder=""> 次
+													<input type="text" class="m-wrap w100" placeholder=""> 次
 													<label class="font">～</label>
-													<input type="text" class="m-wrap span4 medium" placeholder=""> 次
+													<input type="text" class="m-wrap w100 " placeholder=""> 次
 												</div>
 											</div>
 										</div>
@@ -204,7 +204,7 @@
 											<div class="control-group">
 												<label class="control-label">用户昵称关键字:</label>
 												<div class="controls">
-													<input type="text" class="m-wrap medium" name="minReportCount">
+													<input type="text" class="m-wrap" name="minReportCount">
 												</div>
 											</div>
 										</div>
@@ -243,12 +243,12 @@
 													<label class="control-label">用户最近登录起始时间点:</label>
 													<div class="controls">
 														<div class="input-append date form_datetime">
-															<input type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap medium">
+															<input type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap w185">
 															<span class="add-on"><i class="fa fa-calendar icon-calendar"></i></span>
 														</div>
 														<lable class="font">－</lable>
 														<div class="input-append date form_datetime">
-															<input type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap medium">
+															<input type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap w185">
 															<span class="add-on"><i class="fa fa-calendar icon-calendar"></i></span>
 														</div>
 													</div>
@@ -260,9 +260,9 @@
 												<div class="control-group">
 													<label class="control-label">收费金额:</label>
 													<div class="controls">
-														<input type="text" class="m-wrap span4 medium" placeholder=""> 元
+														<input type="text" class="m-wrap w100" placeholder=""> 元
 														<label class="font">～</label>
-														<input type="text" class="m-wrap span4 medium" placeholder=""> 元
+														<input type="text" class="m-wrap w100" placeholder=""> 元
 													</div>
 												</div>
 											</div>

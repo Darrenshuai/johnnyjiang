@@ -58,6 +58,12 @@
 				<li>
 					<div class="sidebar-toggler hidden-phone"></div>
 				</li>
+				<li >
+					<a href="dataanalysis.html">
+					<i class="fa fa-bar-chart"></i> 
+					<span class="title">数据统计分析</span>
+					</a>
+				</li>
 				<li>
 					<a href="index.html">
 						<i class="fa fa-user"></i> 
@@ -79,16 +85,10 @@
 					<span class="title">通话记录查询</span>
 					</a>
 				</li>
-				<li >
-					<a href="dataanalysis.html">
-					<i class="fa fa-bar-chart"></i> 
-					<span class="title">数据统计分析</span>
-					</a>
-				</li>
 				<li>
 					<a href="friendcheck.html">
 					<i class="fa fa-check-square-o"></i> 
-					<span class="title">好友申请审核</span>
+					<span class="title">待审核好友列表</span>
 					</a>
 				</li>
 			</ul>
@@ -112,7 +112,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="fa fa-home"></i>
-								<a href="index.html">首页</a> 
+								<a href="dataanalysis.html">首页</a> 
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
@@ -138,7 +138,7 @@
 											<div class="control-group">
 												<label class="control-label">桔子ID:</label>
 												<div class="controls">
-													<input type="text" class="m-wrap span4 medium" >
+													<input type="text" class="m-wrap w100" >
 												</div>
 											</div>
 										</div>
@@ -161,15 +161,15 @@
 											<div class="control-group">
 												<label class="control-label">总通话时长:</label>
 												<div class="controls">
-													<input type="text" class="m-wrap span4 medium" placeholder=""> 秒
+													<input type="text" class="m-wrap w100" placeholder=""> 秒
 													<label class="font">～</label>
-													<input type="text" class="m-wrap span4 medium" placeholder=""> 秒
+													<input type="text" class="m-wrap w100" placeholder=""> 秒
 												</div>
 											</div>
 										</div>
 										<div class="span5">
 											<div class="control-group">
-												<label class="control-label">通话收费:</label>
+												<label class="control-label">收费类型:</label>
 												<div class="controls">
 													<label class="checkbox">
 														<input type="checkbox" value="0" checked="checked" name="userIdRadio" />收费
@@ -187,12 +187,12 @@
 												<label class="control-label">查询时间段:</label>
 												<div class="controls">
 													<div class="input-append date form_datetime">
-														<input type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap">
+														<input size="16" type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap w185">
 														<span class="add-on"><i class="fa fa-calendar icon-calendar"></i></span>
 													</div>
 													<lable class="font">－</lable>
 													<div class="input-append date form_datetime">
-														<input type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap">
+														<input size="16" type="text"  name="lastonlinetimeFrom"  value="" readonly class="m-wrap w185">
 														<span class="add-on"><i class="fa fa-calendar icon-calendar"></i></span>
 													</div>
 												</div>

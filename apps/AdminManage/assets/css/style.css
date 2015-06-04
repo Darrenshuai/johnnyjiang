@@ -5494,6 +5494,7 @@ input.m-wrap.txt-t{
   display: inline-block;
   vertical-align: middle;
   margin-top: -3px;
+    width: 80px !important;
 }
 .numeric{
   height: 38px;
@@ -5521,3 +5522,19 @@ select.m-wrap.formsel{
   display: inline;
 }
 td.group img{margin-bottom: 10px;}
+.row-fluid select.m-wrap.zd{
+  width: 78px;
+}
+input.m-wrap.w65{
+  width: 65px;
+}
+input.m-wrap.w185{
+  width: 185px;
+}
+input.w100{
+  width: 100px;
+}
+.check.main{
+  width: 54px;
+  display: inline-block;
+}
