@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>留言板</title>
+	<style type="text/css" media="screen">
+		.w1000{
+			width:1000px;
+			margin:0 auto;
+		}
+		.list{
+
+		}
+	</style>
+</head>
+<body>
+	<div class="w1000">
+		<h3>留言板</h3>
+		<input type="text"  class="con" placeholder="输入要说的内容哦"><input type="button" id="t" onclick="reload.setdata()" value="提交"/>	<br>
+		<div class="list">
+			<ul>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var reload={
+			getdata:function(){
+				if(!window.localStorage)
+				{
+					alert('貌似你的浏览器有问题哦！');
+					return false;
+				}
+				var ul=document.querySelector('.list ul');
+				ul.innerHTML="";
+				for(var i=0;i<localStorage.length;i++)
+				{
+					var key=localStorage.key(i);
+					var li='<li>'+localStorage.getItem(key)+'</li>';
+					ul.innerHTML+=li;
+				}
+			},
+			setdata:function(){
+				var v=document.querySelector('.con').value,d=(new Date()).getTime();
+				window.localStorage.setItem(d,v);
+				reload.getdata();
+			},
+		};
+
+		reload.getdata();
+	</script>
+</body>
+</html>
