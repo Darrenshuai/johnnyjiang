@@ -5538,3 +5538,7 @@ input.w100{
   width: 54px;
   display: inline-block;
 }
+.table-condensed td{text-align: center;}
+.table-condensed td.left{
+  text-align: left;
+}
