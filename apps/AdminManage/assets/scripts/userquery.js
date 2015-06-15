@@ -89,7 +89,7 @@ var DataManage = function() {
 						"name": "description",
 						"value": $("#description").val()
 					});
-					console.log(aoData);
+					//console.log(aoData);
 				},
 				"aoColumns": [{
 					"mDataProp": "userId"
@@ -113,7 +113,7 @@ var DataManage = function() {
 						var images = "";
 						if (len > 0) {
 							for (var i = 0; i < len; i++) {
-								images += '<a href="' + obj.aData.userImages[i].normal + '" target="_blank"> <img src="' + obj.aData.userImages[i].normal + '" style="width: 100px; " /> </a>';
+								images += '<a href="' + obj.aData.userImages[i].normal + '" target="_blank"> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
 							}
 							return images;
 						} else {
@@ -156,9 +156,14 @@ var DataManage = function() {
 				}, {
 					"mDataProp": null,
 					"fnRender": function(obj) {
-						return "录音src";
+						if (obj.aData.reportCount == 0) {
+							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"/></div>'
+						} else {
+							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox  checked "/></div>'
+						}
 					}
 				}, {
+					"sClass": "td-opt",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						// 操作按钮
@@ -208,7 +213,7 @@ var DataManage = function() {
 					})
 					.fail(function() {})
 					.always(function() {
-						console.log("complete");
+						$('div.switch').bootstrapSwitch();
 					});
 			}
 		}
@@ -243,11 +248,17 @@ $(function() {
 	});
 
 	DataManage.init();
-
 	//点击搜索
 	$('#searchuser').on('click', function() {
 		var oSettings = OdataTable.fnSettings();
 		oSettings._iDisplayStart = 0;
 		OdataTable.fnDraw();
+	});
+
+	//录音按钮点击事件
+	$('#userdata_wrapper').on('switch-change','div.switch',function(e, data) {
+		var $el = $(data.el),
+			value = data.value;
+		console.log(value);
 	});
 });

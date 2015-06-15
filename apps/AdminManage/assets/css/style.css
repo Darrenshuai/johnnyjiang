@@ -5542,3 +5542,6 @@ input.w100{
 .table-condensed td.left{
   text-align: left;
 }
+.td-opt{
+  width: 95px;
+}

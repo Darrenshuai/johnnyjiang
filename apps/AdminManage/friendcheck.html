@@ -127,8 +127,8 @@
 							<div class="portlet-title">
 								<div class="caption">待审核好友列表</div>
 								<div class="tools">
-									<a class="btn green">通过申请</a>
-									<a class="btn red">拒绝申请</a>
+									<a class="btn green checkAll">通过申请</a>
+									<a class="btn red rejectAll">拒绝申请</a>
 								</div>
 							</div>
 							<div class="portlet-body flip-scroll">
@@ -152,7 +152,7 @@
 											<th>操作</th>
 										</tr>
 									</thead>
-									<tbody>
+									<tbody id="applylist">
 										<tr>
 											<td align="center">
 												<label class="checkbox friend">
@@ -446,58 +446,5 @@
 	<script src="assets/plugins/respond.min.js"></script>  
 	<![endif]-->   
 	<script src="assets/scripts/app.js" type="text/javascript"></script>
-	<script>
-		$(function() {    
-		   App.init(); 
-		    $(".form_datetime").datetimepicker({
-	            isRTL: App.isRTL(),
-	            language : 'zh-CN',
-				format : "yyyy-mm-dd hh:ii",
-				autoclose : true,
-	            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left")
-	        });
-
-	        $('label.more').on('click',function(){
-	        	$('.more-filter').slideToggle();
-	        });
-
-	        //切换radio
-	        $('.checkbox.main input[type="checkbox"]').on('change',function(){
-	        	if($(this).is(':checked'))
-	        	{
-	        		$('.checkbox.friend input[type="checkbox"').attr('checked','checked');
-	        		$('.checkbox.friend span').addClass('checked');
-	        	}
-	        	else
-	        	{
-	        		$('.checkbox.friend input[type="checkbox"').attr('checked',false);
-	        		$('.checkbox.friend span').removeClass('checked');
-	        	}
-	        });
-
-	        // $.ajax({
-	        // 	url: 'http://115.29.102.106/juzi/web/users/list?jsonp=handler',
-	        // 	type: 'get',
-	        // 	dataType: 'jsonp',
-	        // 	jsonp : "callback",
-	        // 	data: {
-	        // 		aoData: data
-	        // 	},
-	        // 	jsonpCallback:"handler"
-	        // })
-	        // .done(function(mes) {
-	        // 	console.log(mes);
-	        // })
-	        // .fail(function() {
-	        // 	console.log("error");
-	        // })
-	        // .always(function() {
-	        // 	console.log("complete");
-	        // });
-	        // var handler=function(){
-
-	        // }
-		});
-	</script>
-</body>
+	<script type="text/javascript" src="assets/scripts/friendcheck.js"></script>
 </html>
