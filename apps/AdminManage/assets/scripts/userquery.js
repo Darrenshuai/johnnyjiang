@@ -113,7 +113,7 @@ var DataManage = function() {
 						var images = "";
 						if (len > 0) {
 							for (var i = 0; i < len; i++) {
-								images += '<a href="' + obj.aData.userImages[i].normal + '" target="_blank"> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
+								images += '<a class="imgs" href="' + obj.aData.userImages[i].normal + '" target="_blank"><i class="close">&times</i> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
 							}
 							return images;
 						} else {
@@ -151,7 +151,15 @@ var DataManage = function() {
 				}, {
 					"mDataProp": null,
 					"fnRender": function(obj) {
-						return statusArr[obj.aData.status];
+						return '<div class="btn-group status"><button class="btn green skey" style="width:85px">'+statusArr[obj.aData.status]+'</button>'+
+						'<button class="btn green dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>'+
+						'</button><ul class="dropdown-menu" style="text-align:left">'+
+						'<li><a value="0">正常</a></li>'+
+						'<li><a value="1">待审核</a></li>'+
+						'<li><a  value="2">封号</a></li>'+
+						'<li><a  value="3">低质量</a></li>'+
+						'<li><a  value="4">封禁设备</a></li>'+
+						'</ul></div>'
 					}
 				}, {
 					"mDataProp": null,
@@ -159,7 +167,7 @@ var DataManage = function() {
 						if (obj.aData.reportCount == 0) {
 							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"/></div>'
 						} else {
-							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox  checked "/></div>'
+							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"  checked/></div>'
 						}
 					}
 				}, {
@@ -167,7 +175,7 @@ var DataManage = function() {
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						// 操作按钮
-						return '<a class="btn blue">修改状态</a>'
+						return '<a class="btn blue send">发送信息</a>'
 					}
 				}],
 				"aoColumnDefs": [{
@@ -261,4 +269,21 @@ $(function() {
 			value = data.value;
 		console.log(value);
 	});
+
+	//发送信息
+	$('#userdata').on('click','a.send',function(){
+		var td=$(this).closest('tr').find('td:first').text();
+		console.log(td);
+		$('#portlet-config').modal('show');
+	});
+
+
+	//状态改变
+	$('#userdata').on('click','.status a',function(){
+		var v=$(this).attr('value');
+		//请求操作代码
+		//｛。。。｝
+		//成功后执行下面代码
+		$(this).parents().eq(2).find('.skey').text(statusArr[v]);
+	})
 });

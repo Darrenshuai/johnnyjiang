@@ -5545,3 +5545,13 @@ input.w100{
 .td-opt{
   width: 95px;
 }
+a.imgs{
+  position: relative;
+  display: inline-block;
+}
+a.imgs i{
+  position: absolute;right: 10px;
+  top: 10px;
+  cursor: pointer;
+  color: red；
+}
