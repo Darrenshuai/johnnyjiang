@@ -256,7 +256,7 @@ $(function() {
 	});
 
 	//录音按钮点击事件
-	$('#userdata_wrapper').on('switch-change','div.switch',function(e, data) {
+	$('#userdata').on('switch-change','div.switch',function(e, data) {
 		var $el = $(data.el),
 			value = data.value;
 		console.log(value);
