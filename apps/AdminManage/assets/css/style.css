@@ -3061,7 +3061,7 @@ Custom portlet tabs
 Dashboard container
 ***/
 #dashboard {
-  overflow: hidden;
+  overflow:auto;
 }
 
 /***
@@ -5550,8 +5550,34 @@ a.imgs{
   display: inline-block;
 }
 a.imgs i{
-  position: absolute;right: 10px;
-  top: 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
   cursor: pointer;
-  color: red；
+  color: red;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: bold;
+}
+.photoimg{
+    padding-top: 10px;
+}
+.photoimg div{
+  margin-bottom: 10px;
+}
+.icon-angle-left:before{
+  content: "\f104";
+}
+.icon-angle-right:before {
+  content: "\f105";
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+.changekey .dropdown-menu li > a{
+  line-height: 14px;
 }

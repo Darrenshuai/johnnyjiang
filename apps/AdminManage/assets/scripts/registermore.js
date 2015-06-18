@@ -13,6 +13,10 @@ $(function() {
 	$('#userlist').on('click', '.btn.add', function() {
 		var m = $('#usertd').html();
 		$(m).appendTo('#userlist');
+		$('.add').hide();
+		$('.deletes').show();
+		$('.add:last').show();
+		$('.deletes:last').hide();
 		$(".form_datetime").datetimepicker({
 			isRTL: App.isRTL(),
 			language: 'zh-CN',
@@ -23,13 +27,26 @@ $(function() {
 		});
 	});
 
+	//移除一行
+	$('#userlist').on('click','.btn.deletes',function(){
+		$(this).closest('tr').remove();
+	});	
+
 	//新增头像
 	$('#userlist').on('click', '.addnew', function() {
-		var tr = $(this).closest('label').clone();
-		tr.find('a.addnew').remove();
-		tr.append('<a class="btn red icn-only deletnew"><i class="fa fa-minus white"></i></a>');
-		var td = $(this).closest('td');
-		tr.appendTo(td);
+		var plist=$(this).parent().next('.photoimg');
+		var tr = $('#imgtmp').html();
+		for (var i = 0; i <7; i++) {
+			if(plist.find('div').length<7)
+			{
+				$(tr).appendTo(plist);	
+			}
+		}
+		(function(s){
+			$(s).find('.deletnew').on('click',function(){
+				$(this).parents().eq(1).remove();
+			})
+		})(plist);
 	});
 
 	//删除头像
@@ -47,10 +64,7 @@ $(function() {
 			descriptionList:[],
 			birthdayList:[],
 			genderList:[],
-			photoList:{
-
-			},
-			imageLists:[]
+			photoList:[]
 		};
 		$('#userlist tr').each(function() {
 			var phone = $(this).find('input[name="phone"]').val(),
@@ -59,12 +73,19 @@ $(function() {
 				signs = $(this).find('input[name="signs"]').val(),
 				birthday = $(this).find('input[name="birthday"]').val(),
 				genderList=$(this).find('select[name="gender"] option:checked').val()
+			var imgs={};
+			imgs.imgurl=$(this).find('input[name="imgurl"]').val();
+			imgs.photolist=[];
+			$(this).find('.photoimg input[name="imgphoto"]').each(function(){
+				imgs.photolist.push($(this).val());
+			});
 			udata.phoneNumberList.push(phone);
 			udata.passWordList.push(pass);
 			udata.nickNameList.push(nick);
 			udata.descriptionList.push(signs);
 			udata.birthdayList.push(birthday);
 			udata.genderList.push(genderList);
+			udata.photoList.push(imgs);
 		});
 		console.log(udata);
 	});

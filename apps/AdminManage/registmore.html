@@ -135,43 +135,49 @@
 									</thead>
 									<tbody id="userlist">
 										<tr>
-											<td class="numeric"  align="center">
+											<td class="numeric"  align="center" valign="top">
 												<input  type="text" placeholder="1" name="phone" class="m-wrap txt-t small">
 											</td>
-											<td class="numeric"  align="center">
+											<td class="numeric"  align="center" valign="top">
 												<input  type="text" placeholder="1" name="password" class="m-wrap txt-t small">
 											</td>
-											<td class="numeric imgs" align="center">
+											<td class="numeric imgs" align="center" valign="top">
 												<label>
-												<input  type="file" placeholder="1" name="imgurl" class="m-wrap txt-t small">
-												<a class="btn blue">
-													上传
-												</a>
-												<a class="btn blue icn-only addnew">
-													<i class="fa fa-plus white"></i>
-												</a>
+													<input  type="text" placeholder="1" name="imgurl" class="m-wrap txt-t small">
+													<a class="btn blue">
+													选择文件
+													</a>
 												</label>
+												<lable>
+													<a class="btn blue" style="width: 65px;">
+													上传 
+													</a>
+													<a class="btn blue addnew" style="width: 55px;">
+														更多
+													</a>
+												</lable>
+												<div class="photoimg">
+												</div>
 											</td>
-											<td class="numeric" align="center">
+											<td class="numeric" align="center" valign="top">
 												<select class="m-wrap formsel" name="gender">
-													<option value="0">不限</option>
 													<option value="1">男</option>
-													<option value="2">女</option>
+													<option value="2" selected="">女</option>
 												</select>
 											</td>
-											<td class="numeric" align="center">
+											<td class="numeric" align="center" valign="top">
 												<input  type="text" placeholder="1" name="username" class="m-wrap txt-t small"></td>
-											<td class="numeric" align="center">
+											<td class="numeric" align="center" valign="top">
 												<input  type="text" placeholder="1" name="signs" class="m-wrap txt-t small"></td>
-											<td class="numeric" align="center">
+											<td class="numeric" align="center" valign="top">
 												<div class="input-append date form_datetime">
 													<input type="text"  name="birthday"  value="" class="m-wrap" style="width:90px;">
 													<span class="add-on"><i class="fa fa-calendar icon-calendar"></i></span>
 												</div>
 											</td>
-											<td class="numeric" align="center">
+											<td class="numeric" align="center" valign="top">
 												<input type="button" class="btn green add" value="添加"/>
-												<input type="button" class="btn red deletes" value="移除"/>
+												<input type="button" class="btn red deletes" value="移除" style="display:none" />
 											</td>
 										</tr>
 									</tbody>
@@ -187,45 +193,71 @@
 	</div>
 	<script type="html/text" id="usertd">
 		<tr>
-			<td class="numeric"  align="center">
+			<td class="numeric"  align="center" valign="top">
 				<input  type="text" placeholder="1" name="phone" class="m-wrap txt-t small">
 			</td>
-			<td class="numeric"  align="center">
+			<td class="numeric"  align="center" valign="top">
 				<input  type="text" placeholder="1" name="password" class="m-wrap txt-t small">
 			</td>
-			<td class="numeric imgs" align="center">
+			<td class="numeric imgs" align="center" valign="top">
 				<label>
-				<input  type="text" placeholder="1" name="imgurl" class="m-wrap txt-t small">
-				<a class="btn blue">
-					上传
-				</a>
-				<a class="btn blue icn-only addnew">
-					<i class="fa fa-plus white"></i>
-				</a>
+					<input  type="text" placeholder="1" name="imgurl" class="m-wrap txt-t small">
+					<a class="btn blue">
+					选择文件
+					</a>
 				</label>
+				<lable>
+					<a class="btn blue" style="width: 65px;">
+					上传 
+					</a>
+					<a class="btn blue addnew" style="width: 55px;">
+						更多
+					</a>
+				</lable>
+				<div class="photoimg">
+				</div>
 			</td>
-			<td class="numeric" align="center">
+			<td class="numeric" align="center" valign="top">
 				<select class="m-wrap formsel" name="gender">
-					<option value="0">不限</option>
 					<option value="1">男</option>
-					<option value="2">女</option>
+					<option value="2" selected>女</option>
 				</select>
 			</td>
-			<td class="numeric" align="center">
+			<td class="numeric" align="center" valign="top">
 				<input  type="text" placeholder="1" name="username" class="m-wrap txt-t small"></td>
-			<td class="numeric" align="center">
+			<td class="numeric" align="center" valign="top">
 				<input  type="text" placeholder="1" name="signs" class="m-wrap txt-t small"></td>
-			<td class="numeric" align="center">
+			<td class="numeric" align="center" valign="top">
 				<div class="input-append date form_datetime">
 					<input type="text"  name="birthday"  value="" readonly class="m-wrap" style="width:90px;">
 					<span class="add-on"><i class="fa fa-calendar icon-calendar"></i></span>
 				</div>
 			</td>
-			<td class="numeric" align="center">
+			<td class="numeric" align="center" valign="top">
 				<input type="button" class="btn green add" value="添加">
+				<input type="button" class="btn red deletes" value="移除" style="display:none"/>
 			</td>
 		</tr>
 	</script>
+	<script type="html/text" id="imgtmp">
+		<div>
+			<label>
+				<input  type="text" placeholder="1" name="imgphoto" class="m-wrap txt-t small">
+				<a class="btn blue">
+				选择文件
+				</a>
+			</label>
+			<lable>
+				<a class="btn blue" style="width: 65px;">
+				上传
+				</a>
+				<a class="btn red deletnew" style="width: 55px;">
+					删除
+				</a>
+			</lable>
+		</div>
+	</script>
+
 	<div id="tips-con" class="modal hide in" aria-hidden="false" style="display:none;">
 	<div class="modal-header">
 		<button data-dismiss="modal" class="close" type="button"></button>

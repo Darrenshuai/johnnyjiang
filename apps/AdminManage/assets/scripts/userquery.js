@@ -107,13 +107,14 @@ var DataManage = function() {
 				}, {
 					"mDataProp": "nickName"
 				}, {
+					"sClass": "left",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						var len = obj.aData.userImages.length;
 						var images = "";
 						if (len > 0) {
 							for (var i = 0; i < len; i++) {
-								images += '<a class="imgs" href="' + obj.aData.userImages[i].normal + '" target="_blank"><i class="close">&times</i> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
+								images += '<a class="imgs" href="' + obj.aData.userImages[i].normal + '" target="_blank"><i class="delete" data-src='+obj.aData.userImages[i].normal +'>&times</i> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
 							}
 							return images;
 						} else {
@@ -125,13 +126,6 @@ var DataManage = function() {
 					"sClass": "left",
 					"mDataProp": "description"
 				}, {
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						return '语音长度';
-					}
-				}, {
-					"mDataProp": "chargeRate"
-				}, {
 					"mDataProp": "totalDuration"
 				}, {
 					"mDataProp": "reportCount"
@@ -142,12 +136,19 @@ var DataManage = function() {
 						if (null == tag) {
 							tag = "无";
 						}
-						return tag;
+						return '<div class="btn-group status"><button class="btn red skey" style="width:85px">'+tag+'</button>'+
+						'<button class="btn red dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>'+
+						'</button><ul class="dropdown-menu" style="text-align:left">'+
+						'<li><a value="0">无</a></li>'+
+						'<li><a value="1">色情</a></li>'+
+						'</ul></div>'
 					}
 				}, {
 					"mDataProp": "balance"
 				}, {
 					"mDataProp": "actualbalance"
+				}, {
+					"mDataProp": "chargeRate"
 				}, {
 					"mDataProp": null,
 					"fnRender": function(obj) {
@@ -156,9 +157,9 @@ var DataManage = function() {
 						'</button><ul class="dropdown-menu" style="text-align:left">'+
 						'<li><a value="0">正常</a></li>'+
 						'<li><a value="1">待审核</a></li>'+
-						'<li><a  value="2">封号</a></li>'+
-						'<li><a  value="3">低质量</a></li>'+
-						'<li><a  value="4">封禁设备</a></li>'+
+						'<li><a  value="2" class="hasmodel">封号一天</a></li>'+
+						'<li><a  value="3" class="hasmodel">封号永久</a></li>'+
+						'<li><a  value="4" class="hasmodel">封禁设备</a></li>'+
 						'</ul></div>'
 					}
 				}, {
@@ -280,10 +281,48 @@ $(function() {
 
 	//状态改变
 	$('#userdata').on('click','.status a',function(){
-		var v=$(this).attr('value');
-		//请求操作代码
-		//｛。。。｝
-		//成功后执行下面代码
-		$(this).parents().eq(2).find('.skey').text(statusArr[v]);
-	})
+		var se=$(this),v=$(this).attr('value'),t=$(this).text();
+		if($(this).hasClass('hasmodel'))
+		{
+			$('#portlet-set').modal('show');
+			(function(k){
+				//发送封号理由
+				$('.send').on('click',function(e){
+					e.preventDefault();
+					var val=$('#portlet-set textarea').val();
+					if(val=="")
+					{
+						alert('理由不能为空！');
+					}	
+					else
+					{
+						$('#portlet-set').modal('hide');
+						$(k).text(t);
+						//｛....｝
+						//请求操作代码
+						//｛。。。｝
+						//成功后执行下面代码
+						$(k).parents().eq(2).find('.skey').text(t);
+					}
+				});
+			})(se);
+		}
+		else
+		{
+			//请求操作代码
+			//｛。。。｝
+			//成功后执行下面代码
+			$(se).parents().eq(2).find('.skey').text(t);
+
+		}
+		
+	});
+
+	//头像删除
+	$('#userdata').on('click','i.delete',function(e){
+		e.preventDefault();
+		//要删除的图片
+		var src=$(this).data('src');
+		consoel.log(src);
+	});
 });
