@@ -46,4 +46,43 @@ $(function(){
 			alert('至少选择一条记录！');
 		}
 	})
+
+
+	//状态改变
+	$('#applylist').on('click','.status a',function(){
+		var se=$(this),v=$(this).attr('value'),t=$(this).text();
+		if($(this).hasClass('hasmodel'))
+		{
+			$('#portlet-set').modal('show');
+			(function(k){
+				//发送封号理由
+				$('.send').on('click',function(e){
+					e.preventDefault();
+					var val=$('#portlet-set textarea').val();
+					if(val=="")
+					{
+						alert('理由不能为空！');
+					}	
+					else
+					{
+						$('#portlet-set').modal('hide');
+						$(k).text(t);
+						//｛....｝
+						//请求操作代码
+						//｛。。。｝
+						//成功后执行下面代码
+						$(k).parents().eq(2).find('.skey').text(t);
+					}
+				});
+			})(se);
+		}
+		else
+		{
+			//请求操作代码
+			//｛。。。｝
+			//成功后执行下面代码
+			$(se).parents().eq(2).find('.skey').text(t);
+
+		}
+	});
 });

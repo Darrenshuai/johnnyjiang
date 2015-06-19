@@ -91,6 +91,7 @@ function getPhoneRecords() {
 				"name": "userType",
 				"value": userType
 			});
+			console.log(aoData);
 
 		},
 		"aoColumns": [ // 列设置，表有几列，数组就有几项
