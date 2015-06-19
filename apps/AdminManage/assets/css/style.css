@@ -5581,3 +5581,9 @@ a.imgs i{
 .changekey .dropdown-menu li > a{
   line-height: 14px;
 }
+.imgs i{
+  display: none;
+}
+.imgs:hover i{
+  display: block;
+}
