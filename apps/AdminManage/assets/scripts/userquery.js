@@ -323,6 +323,6 @@ $(function() {
 		e.preventDefault();
 		//要删除的图片
 		var src=$(this).data('src');
-		consoel.log(src);
+		console.log(src);
 	});
 });
