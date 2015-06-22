@@ -1,5 +1,10 @@
 var oTable;
 // 用户操作的选项
+function format(data) {
+	var html = $('#user-tmpl').html();
+	var tmpl = Handlebars.compile(html);
+	return tmpl(data);
+}
 
 $(document).ready(function() {
 	// 默认差1个礼拜内的信息
@@ -7,11 +12,10 @@ $(document).ready(function() {
 	$("#endTime").val(getNowTime(0));
 	// $("#searchItems").validationEngine();
 	// 获取消息通知
-	// getPhoneRecords();
 	// $("#search").checkPermission();
 	getPhoneRecords();
-
 	App.init();
+
 	audiojs.events.ready(function() {
 		var as = audiojs.createAll();
 	});
@@ -19,11 +23,49 @@ $(document).ready(function() {
 	$(".form_datetime").datetimepicker({
 		isRTL: App.isRTL(),
 		language: 'zh-CN',
-		format: "yyyy-mm-dd hh:ii",
+		format: "<yyyy></yyyy>-mm-dd hh:ii",
 		autoclose: true,
 		pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left")
 	});
 
+	//点击查看详情
+	$('#datatable tbody').on('click', 'tr td.arr', function() {
+		var tr = $(this).closest('tr');
+		if ($(this).hasClass('ar1')) {
+			data.cla='a1';
+		} else if ($(this).hasClass('ar2')) {
+			data.cla='a2';
+		}
+		//请求接口
+		//{{ajax ...}}
+		//成功后 数据格式 data
+		var data = {
+			'imglist': [{
+				'src': 'http://juzitalk-test.qiniudn.com/FnxVJ7rvlOtfjBnwk7b_x9ohXL7_?imageView/2/w/640/h/640'
+			}, {
+				'src': 'http://juzitalk-test.qiniudn.com/FnxVJ7rvlOtfjBnwk7b_x9ohXL7_?imageView/2/w/640/h/640'
+			}, {
+				'src': 'http://juzitalk-test.qiniudn.com/FnxVJ7rvlOtfjBnwk7b_x9ohXL7_?imageView/2/w/640/h/640'
+			}],
+			'fl': '0.2',
+			'sex': '男',
+			'totTime': '通话时间',
+			'tag': '标签',
+			'sign': '用户签名',
+			'status': '状态'
+		};
+		//生成新的tr
+		var newtr = format(data);
+		//获取插入新的tr位置
+		tr = tr.next(tr).hasClass('new') == true ? tr.next('tr.new') : tr;
+		if ($(this).hasClass('open')) {
+			$(this).removeClass('open');
+			$('.'+data.cla).remove();
+		} else {
+			$(this).addClass('open');
+			$(newtr).insertAfter(tr);
+		}
+	});
 });
 
 // 搜索功能
@@ -91,36 +133,36 @@ function getPhoneRecords() {
 				"name": "userType",
 				"value": userType
 			});
-			console.log(aoData);
+			//console.log(aoData);
 
 		},
-		"aoColumns": [ // 列设置，表有几列，数组就有几项
-			{
-				"mDataProp": "phoneRecordId"
-			}, {
-				"mDataProp": "fromUserId"
-			}, {
-				"mDataProp": "toUserId"
-			}, {
-				"mDataProp": "startTime"
-			}, {
-				"mDataProp": "endTime"
-			}, {
-				"mDataProp": "duration"
-			}, {
-				"mDataProp": null,
-				"fnRender": function(obj) {
-					// 操作按钮
-					return obj.aData.chargeRate == 0 ? "免费" : obj.aData.chargeRate + "元/分钟";
-				}
-			}, {
-				"mDataProp": null,
-				"fnRender": function(obj) {
-					// 操作按钮
-					return '<audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="auto"></audio>'
-				}
+		"aoColumns": [{
+			"mDataProp": "phoneRecordId"
+		}, {
+			"sClass": 'arr ar1',
+			"mDataProp": "fromUserId"
+		}, {
+			"sClass": 'arr ar2',
+			"mDataProp": "toUserId"
+		}, {
+			"mDataProp": "startTime"
+		}, {
+			"mDataProp": "endTime"
+		}, {
+			"mDataProp": "duration"
+		}, {
+			"mDataProp": null,
+			"fnRender": function(obj) {
+				// 操作按钮
+				return obj.aData.chargeRate == 0 ? "免费" : obj.aData.chargeRate + "元/分钟";
 			}
-		],
+		}, {
+			"mDataProp": null,
+			"fnRender": function(obj) {
+				// 操作按钮
+				return '<audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="auto"></audio>'
+			}
+		}],
 		"aoColumnDefs": [{
 			sDefaultContent: '',
 			aTargets: ['_all']
@@ -163,7 +205,7 @@ function getPhoneRecords() {
 			})
 			.fail(function() {})
 			.always(function() {
-				console.log("complete");
+				//console.log("complete");
 			});
 	}
 

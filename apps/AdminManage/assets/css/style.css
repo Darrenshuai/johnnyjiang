@@ -5396,6 +5396,7 @@ Datatables Plugin(in v1.3)
 .dataTable {  
   clear: both;
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .dataTables_filter label {
@@ -5586,4 +5587,27 @@ a.imgs i{
 }
 .imgs:hover i{
   display: block;
+}
+td.arr{
+   font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+td.arr:after{
+  content: "\f107";
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+td.arr.open:after{
+  content: "\f106";
+}
+td.w220 {
+    width: 220px;
+}
+td.w100{
+  width: 100px
 }
