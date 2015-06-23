@@ -58,12 +58,11 @@ $(document).ready(function() {
 		//生成新的tr
 		var newtr = format(data);
 		//获取插入新的tr位置
-		tr = tr.next(tr).hasClass('new') == true ? tr.next('tr.new') : tr;
+		$('tr.new').remove();
 		if ($(this).hasClass('open')) {
 			$(this).removeClass('open');
-			$('.'+data.cla).remove();
 		} else {
-			$(this).addClass('open');
+			$(this).addClass('open').siblings('td.arr').removeClass('open');
 			$(newtr).insertAfter(tr);
 		}
 	});

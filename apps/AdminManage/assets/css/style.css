@@ -5611,3 +5611,12 @@ td.w220 {
 td.w100{
   width: 100px
 }
+tr.new{
+  background: rgb(182, 182, 182);
+  color: #FFF;
+}
+.table-striped tbody>tr:nth-child(odd).new>td
+{
+    background: rgb(182, 182, 182);
+    color: #FFF;
+}
