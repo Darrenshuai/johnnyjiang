@@ -23,7 +23,7 @@ $(document).ready(function() {
 	$(".form_datetime").datetimepicker({
 		isRTL: App.isRTL(),
 		language: 'zh-CN',
-		format: "<yyyy></yyyy>-mm-dd hh:ii",
+		format: "yyyy-mm-dd hh:ii",
 		autoclose: true,
 		pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left")
 	});
@@ -31,11 +31,6 @@ $(document).ready(function() {
 	//点击查看详情
 	$('#datatable tbody').on('click', 'tr td.arr', function() {
 		var tr = $(this).closest('tr');
-		if ($(this).hasClass('ar1')) {
-			data.cla='a1';
-		} else if ($(this).hasClass('ar2')) {
-			data.cla='a2';
-		}
 		//请求接口
 		//{{ajax ...}}
 		//成功后 数据格式 data
@@ -54,6 +49,12 @@ $(document).ready(function() {
 			'sign': '用户签名',
 			'status': '状态'
 		};
+		if ($(this).hasClass('ar1')) {
+			data.cla='a1';
+		} else if ($(this).hasClass('ar2')) {
+			data.cla='a2';
+		}
+		
 		//生成新的tr
 		var newtr = format(data);
 		//获取插入新的tr位置
