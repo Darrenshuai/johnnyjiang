@@ -564,7 +564,7 @@ ul.page-sidebar-menu > li > a {
   border: 0px;
   padding: 10px 15px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
 }
 
@@ -685,7 +685,7 @@ ul.page-sidebar-menu > li > ul.sub-menu > li > a {
   padding: 5px 0px;
   padding-left: 44px !important;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   background: none;
 }
@@ -740,7 +740,7 @@ ul.page-sidebar-menu > li > ul.sub-menu  li > ul.sub-menu > li > a {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   background: none;
 }
@@ -1007,7 +1007,7 @@ Page title
 }
 
 .page-title small {
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0px;
   font-weight: 300;
   color: #888;
@@ -1037,7 +1037,7 @@ Page breadcrumb
 .page-content .breadcrumb i, 
 .page-content .breadcrumb span {
   color: #333;
-  font-size: 14px;
+  font-size: 13px;
   text-shadow:none;
 }
 
@@ -1071,7 +1071,7 @@ Dashboard date range panel
   text-transform: normal;
   color: #fff;
   margin-top: 0px;
-  font-size: 14px;
+  font-size: 13px;
 }
 .page-content .breadcrumb .dashboard-date-range span {
   font-weight: normal; 
@@ -1882,7 +1882,7 @@ Custom icon buttons
   padding: 10px;
   background-color: #eee;
   margin: 0px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   color: #000;
 }
@@ -1951,7 +1951,7 @@ Custom icon buttons
 }
 
 .dropdown-menu.inbox li a .subject .from {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: #02689b;
 }
@@ -1980,7 +1980,7 @@ Custom icon buttons
 }
 
 .dropdown-menu.tasks .task .percent {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   float: right;
@@ -2059,7 +2059,7 @@ Custom tables
 }
 
 .table thead tr th {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -2073,7 +2073,7 @@ Custom tables
 
 .table-advance thead tr th{
   background-color: #DDD; 
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400; 
   color: #666;
 }
@@ -2274,14 +2274,14 @@ Uniform plugin css changes
   display: block;
   margin-top: 7px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .controls .text-inline {
   display: inline-block;
   margin-top: 8px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 
@@ -3484,7 +3484,7 @@ Tiles(new in v1.1.1)
   color: #ffffff;
   text-align: center;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.01em;
   line-height: 14px;
   font-smooth: always;
@@ -3650,7 +3650,7 @@ Calendar with full calendar
 }
 
 .portlet .event-form-title {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: -8px;
   font-weight: 400;
   margin-bottom: 0px;
@@ -3878,7 +3878,7 @@ Form wizard
 
 .form-wizard .step .desc {
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
 }
  
@@ -4012,7 +4012,7 @@ Daterangepicker plugin css changes
 
 .daterangepicker th {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /***
@@ -4464,7 +4464,7 @@ Glyphicons Demo(new in v1.1.1)
 .halfings-demo p,
 .halfings-demo a  {
   width: 175px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 14px;
   text-align: left;
   display: inline-block;
@@ -4797,7 +4797,7 @@ Horezantal Menu(new in v1.2)
 }
 
 .header .hor-menu ul.nav li a {
-  font-size: 14px;
+  font-size: 13px;
   padding: 11px 18px; 
 }
 
@@ -5619,4 +5619,32 @@ tr.new{
 {
     background: rgb(182, 182, 182);
     color: #FFF;
+}
+label, input, button, select, textarea{
+   font-size: 13px !important;
+}
+.btn{
+   font-size: 13px !important;
+}
+.btn-group>.btn, .btn-group>.dropdown-menu, .btn-group>.popover{
+  font-size: 13px !important;
+}
+.w220 img{
+  margin-bottom: 5px;
+}
+.text-c{
+  text-align: center;
+}
+.has-switch{
+  margin-top: 6px;
+}
+.form-actions.btnbox{
+    text-align: center;
+  padding: 20px 0;
+}
+.form-horizontal .control-label{
+  width: auto;
+}
+.form-horizontal .controls{
+  margin-left: 10px;
 }
