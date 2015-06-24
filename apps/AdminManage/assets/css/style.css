@@ -5544,7 +5544,7 @@ input.w100{
   text-align: left;
 }
 .td-opt{
-  width: 95px;
+  min-width: 95px;
 }
 a.imgs{
   position: relative;
