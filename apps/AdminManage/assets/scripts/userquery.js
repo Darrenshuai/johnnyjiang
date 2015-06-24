@@ -105,6 +105,7 @@ var DataManage = function() {
 						}
 					}
 				}, {
+					"sClass": "left",
 					"mDataProp": "nickName"
 				}, {
 					"sClass": "left",
