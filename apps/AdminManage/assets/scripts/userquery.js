@@ -126,7 +126,10 @@ var DataManage = function() {
 					"sClass": "left",
 					"mDataProp": "description"
 				}, {
-					"mDataProp": "totalDuration"
+					"mDataProp": null,
+					"fnRender":function(obj){
+						return '<a href="phonequery.html">'+obj.aData.totalDuration+'</a>'
+					}
 				}, {
 					"mDataProp": "reportCount"
 				}, {
