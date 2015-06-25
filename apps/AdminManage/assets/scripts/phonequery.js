@@ -16,10 +16,6 @@ $(document).ready(function() {
 	getPhoneRecords();
 	App.init();
 
-	audiojs.events.ready(function() {
-		var as = audiojs.createAll();
-	});
-
 	$(".form_datetime").datetimepicker({
 		isRTL: App.isRTL(),
 		language: 'zh-CN',
@@ -145,22 +141,26 @@ function getPhoneRecords() {
 			"sClass": 'arr ar2',
 			"mDataProp": "toUserId"
 		}, {
-			"mDataProp": "startTime"
-		}, {
-			"mDataProp": "endTime"
-		}, {
 			"mDataProp": "duration"
 		}, {
+			"sClass":"hidden-480",
+			"mDataProp": "startTime"
+		}, {
+			"sClass":"hidden-480",
+			"mDataProp": "endTime"
+		}, {
+			"sClass":"hidden-480",
 			"mDataProp": null,
 			"fnRender": function(obj) {
 				// 操作按钮
 				return obj.aData.chargeRate == 0 ? "免费" : obj.aData.chargeRate + "元/分钟";
 			}
 		}, {
+			"sClass":"hidden-480",
 			"mDataProp": null,
 			"fnRender": function(obj) {
 				// 操作按钮
-				return '<audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="auto"></audio>'
+				return '<audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="none"></audio>'
 			}
 		}],
 		"aoColumnDefs": [{
@@ -205,7 +205,9 @@ function getPhoneRecords() {
 			})
 			.fail(function() {})
 			.always(function() {
-				//console.log("complete");
+				audiojs.events.ready(function() {
+					var as = audiojs.createAll();
+				});
 			});
 	}
 

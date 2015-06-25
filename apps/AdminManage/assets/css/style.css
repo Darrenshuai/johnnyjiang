@@ -802,7 +802,7 @@ Sidebar toggler(show/hide)
   opacity: 0.5;
   filter: alpha(opacity=50);
   margin-top: 15px;
-  margin-left: 175px;
+  margin-left: 135px;
   width: 29px;
   height: 29px;
   background-repeat: no-repeat;
@@ -5292,10 +5292,11 @@ Responsive tables(new in v1.2.3)
     border: none;
     border-bottom: 1px solid #eee; 
     position: relative;
-    padding-left: 50%; 
+    padding-left: 30%; 
     white-space: normal;
     text-align:left;
-  }
+  
+}
  
   .no-more-tables td:before { 
     /* Now like a table header */
@@ -5543,8 +5544,10 @@ input.w100{
 .table-condensed td.left{
   text-align: left;
 }
-.td-opt{
-  min-width: 95px;
+.td-opt a{
+  cursor: pointer;
+  font-size: 25px;
+  color: blue;
 }
 a.imgs{
   position: relative;
@@ -5563,88 +5566,39 @@ a.imgs i{
 .photoimg{
     padding-top: 10px;
 }
-.photoimg div{
-  margin-bottom: 10px;
-}
-.icon-angle-left:before{
-  content: "\f104";
-}
-.icon-angle-right:before {
-  content: "\f105";
-}
-[class^="icon-"], [class*=" icon-"] {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-}
-.changekey .dropdown-menu li > a{
-  line-height: 14px;
-}
-.imgs i{
-  display: none;
-}
-.imgs:hover i{
-  display: block;
-}
-td.arr{
-   font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-}
-td.arr:after{
-  content: "\f107";
-  display: inline-block;
-  margin-left: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-td.arr.open:after{
-  content: "\f106";
-}
-td.w220 {
-    width: 220px;
-}
-td.w100{
-  width: 100px
-}
-tr.new{
-  background: rgb(182, 182, 182);
-  color: #FFF;
-}
-.table-striped tbody>tr:nth-child(odd).new>td
-{
-    background: rgb(182, 182, 182);
-    color: #FFF;
-}
-label, input, button, select, textarea{
-   font-size: 13px !important;
-}
-.btn{
-   font-size: 13px !important;
-}
-.btn-group>.btn, .btn-group>.dropdown-menu, .btn-group>.popover{
-  font-size: 13px !important;
-}
-.w220 img{
-  margin-bottom: 5px;
-}
-.text-c{
-  text-align: center;
-}
-.has-switch{
-  margin-top: 6px;
-}
-.form-actions.btnbox{
-    text-align: center;
-  padding: 20px 0;
-}
-.form-horizontal .control-label{
-  width: auto;
-}
-.form-horizontal .controls{
-  margin-left: 10px;
+.icon-angle-left:before{content:"\f104";}
+.icon-angle-right:before{content:"\f105";}
+[class^="icon-"],[class*=" icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;}
+.changekey .dropdown-menu li > a{line-height:14px;}
+td.arr{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;}
+td.arr:after{content:"\f067";display:inline-block;margin-left:10px;font-weight:bold;cursor:pointer;}
+td.arr.open:after{content:"\f068";}
+td.w220{width:220px;}
+td.w100{width:100px}
+tr.new{background:rgb(182,182,182);}
+.table-striped tbody>tr:nth-child(odd).new>td{background:rgb(182,182,182);color:#FFF;}
+label,input,button,select,textarea{font-size:13px!important;}
+.btn{font-size:13px!important;}
+.btn-group>.btn,.btn-group>.dropdown-menu,.btn-group>.popover{font-size:13px!important;}
+.w220 img{margin-bottom:5px;}
+.text-c{text-align:center;}
+.has-switch{margin-top:6px;}
+.form-actions.btnbox{text-align:center;padding:20px 0;}
+.form-horizontal .control-label{width:auto;}
+.form-horizontal .controls{margin-left:10px;}
+.nickname i{font-weight:bold;margin-left:5px;}
+.nickname i.fa-mars{color:rgb(79,182,255);}
+.nickname i.fa-venus{color:rgb(255,125,125);}
+.signs p{max-width:300px;margin:0 auto;}
+.photo div{max-width:230px;margin:0 auto;}
+.imgs i{display:none;}
+.imgs:hover i{display:none;}
+#datatable td{vertical-align:middle;}
+.fileinput-button input{position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);transform:translate(-300px,0) scale(4);font-size:23px;direction:ltr;cursor:pointer;}
+.uploadgroup{}
+.fileinput-button{position:relative;}
+.uploadgroup input[type="text"]{position:relative;z-index:2;display:inline-block;margin:0;}
+.numeric .uploadgroup .btn{position:relative;display:inline-block;margin-top:0;}
+.numeric .uploadgroup .deletnew{
+  z-index: 4;
 }

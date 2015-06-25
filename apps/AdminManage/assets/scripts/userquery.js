@@ -1,4 +1,4 @@
-var statusArr = ["正常","待审核","封号一天","封号永久","封禁设备"],
+var statusArr = ["正常", "待审核", "封号一天", "封号永久", "封禁设备"],
 	OdataTable;
 var DataManage = function() {
 	return {
@@ -92,97 +92,99 @@ var DataManage = function() {
 					//console.log(aoData);
 				},
 				"aoColumns": [{
-					"mDataProp": "userId"
-				}, {
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						if (obj.aData.gender == 0) {
-							return '未知';
-						} else if (obj.aData.gender == 1) {
-							return '男';
-						} else {
-							return '女';
-						}
-					}
-				}, {
-					"sClass": "left",
-					"mDataProp": "nickName"
-				}, {
-					"sClass": "left",
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						var len = obj.aData.userImages.length;
-						var images = "";
-						if (len > 0) {
-							for (var i = 0; i < len; i++) {
-								images += '<a class="imgs" href="' + obj.aData.userImages[i].normal + '" target="_blank"><i class="delete" data-src=' + obj.aData.userImages[i].normal + '>&times</i> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
+						"mDataProp": "userId"
+					},{
+						"sClass": "nickname",
+						"mDataProp": "",
+						"fnRender": function(obj) {
+							var b = "";
+							if (obj.aData.gender == 0) {
+								return '未知';
+							} else if (obj.aData.gender == 1) {
+								return obj.aData.nickName+'<i class="fa fa-mars"></i>';
+							} else {
+								return obj.aData.nickName+'<i class="fa fa-venus"></i>';
 							}
-							return images;
-						} else {
-							return "暂无图片"
 						}
+					}, {
+						"sClass":"photo",
+						"mDataProp": null,
+						"fnRender": function(obj) {
+							var len = obj.aData.userImages.length;
+							var images = "<div>";
+							if (len > 0) {
+								for (var i = 0; i < len; i++) {
+									images += '<a class="imgs" href="' + obj.aData.userImages[i].normal + '" target="_blank"><i class="delete" data-src=' + obj.aData.userImages[i].normal + '>&times</i> <img src="' + obj.aData.userImages[i].normal + '" style="width:50px; " /> </a>';
+								}
+								return images+"</div>";
+							} else {
+								return "暂无图片"
+							}
 
-					}
-				}, {
-					"sClass": "left",
-					"mDataProp": "description"
-				}, {
-					"mDataProp": null,
-					"fnRender":function(obj){
-						return '<a href="phonequery.html">'+obj.aData.totalDuration+'</a>'
-					}
-				}, {
-					"mDataProp": "reportCount"
-				}, {
-					"mDataProp": "balance"
-				}, {
-					"mDataProp": "actualbalance"
-				}, {
-					"mDataProp": "chargeRate"
-				}, {
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						if (obj.aData.reportCount == 0) {
-							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"/></div>'
-						} else {
-							return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"  checked/></div>'
+						}
+					}, {
+						"sClass": "left signs",
+						"fnRender": function(obj) {
+							return '<p>' + obj.aData.description + '</p>'
+						}
+					}, {
+						"mDataProp": null,
+						"fnRender": function(obj) {
+							return '<a href="phonequery.html">' + obj.aData.totalDuration + '</a>'
+						}
+					}, {
+						"mDataProp": "reportCount"
+					}, {
+						"mDataProp": "balance"
+					}, {
+						"mDataProp": "actualbalance"
+					}, {
+						"mDataProp": "chargeRate"
+					}, {
+						"mDataProp": null,
+						"fnRender": function(obj) {
+							if (obj.aData.reportCount == 0) {
+								return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"/></div>'
+							} else {
+								return '<div class="switch switch-small" data-on-label="开" data-off-label="关"><input type="checkbox"  checked/></div>'
+							}
+						}
+					}, {
+						"mDataProp": null,
+						"fnRender": function(obj) {
+							var tag = obj.aData.tag;
+							if (null == tag) {
+								tag = "无";
+							}
+							return '<div class="btn-group status"><button class="btn red skey" style="width:45px">' + tag + '</button>' +
+								'<button class="btn red dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>' +
+								'</button><ul class="dropdown-menu" style="text-align:left">' +
+								'<li><a value="0">无</a></li>' +
+								'<li><a value="1">色情</a></li>' +
+								'</ul></div>'
+						}
+					}, {
+						"mDataProp": null,
+						"fnRender": function(obj) {
+							return '<div class="btn-group status"><button class="btn green skey" style="width: 70px;text-align: center;padding: 7px 10px;">' + statusArr[obj.aData.status] + '</button>' +
+								'<button class="btn green dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>' +
+								'</button><ul class="dropdown-menu" style="text-align:left">' +
+								'<li><a value="0">正常</a></li>' +
+								'<li><a value="1">待审核</a></li>' +
+								'<li><a  value="2" class="hasmodel">封号一天</a></li>' +
+								'<li><a  value="3" class="hasmodel">封号永久</a></li>' +
+								'<li><a  value="4" class="hasmodel">封禁设备</a></li>' +
+								'</ul></div>'
+						}
+					}, {
+						"sClass": "td-opt",
+						"mDataProp": null,
+						"fnRender": function(obj) {
+							// 操作按钮
+							return '<a title="发送信息"><i class="fa fa-envelope-o"></i></a>'
 						}
 					}
-				}, {
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						var tag = obj.aData.tag;
-						if (null == tag) {
-							tag = "无";
-						}
-						return '<div class="btn-group status"><button class="btn red skey" style="width:45px">' + tag + '</button>' +
-							'<button class="btn red dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>' +
-							'</button><ul class="dropdown-menu" style="text-align:left">' +
-							'<li><a value="0">无</a></li>' +
-							'<li><a value="1">色情</a></li>' +
-							'</ul></div>'
-					}
-				}, {
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						return '<div class="btn-group status"><button class="btn green skey" style="width:85px">' + statusArr[obj.aData.status] + '</button>' +
-							'<button class="btn green dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>' +
-							'</button><ul class="dropdown-menu" style="text-align:left">' +
-							'<li><a value="0">正常</a></li>' +
-							'<li><a value="1">待审核</a></li>' +
-							'<li><a  value="2" class="hasmodel">封号一天</a></li>' +
-							'<li><a  value="3" class="hasmodel">封号永久</a></li>' +
-							'<li><a  value="4" class="hasmodel">封禁设备</a></li>' +
-							'</ul></div>'
-					}
-				}, {
-					"sClass": "td-opt",
-					"mDataProp": null,
-					"fnRender": function(obj) {
-						// 操作按钮
-						return '<a class="btn blue send">发送信息</a>'
-					}
-				}],
+				],
 				"aoColumnDefs": [{
 					sDefaultContent: '',
 					aTargets: ['_all']
@@ -227,6 +229,21 @@ var DataManage = function() {
 					.fail(function() {})
 					.always(function() {
 						$('div.switch').bootstrapSwitch();
+						$('#userdata tr').each(function(){
+							$(this).find('td').eq(0).attr('data-title',$('#userdata th').eq(0).text())
+							$(this).find('td').eq(1).attr('data-title',$('#userdata th').eq(1).text())
+							$(this).find('td').eq(2).attr('data-title',$('#userdata th').eq(2).text())
+							$(this).find('td').eq(3).attr('data-title',$('#userdata th').eq(3).text())
+							$(this).find('td').eq(4).attr('data-title',$('#userdata th').eq(4).text())
+							$(this).find('td').eq(5).attr('data-title',$('#userdata th').eq(5).text())
+							$(this).find('td').eq(6).attr('data-title',$('#userdata th').eq(6).text())
+							$(this).find('td').eq(7).attr('data-title',$('#userdata th').eq(7).text())
+							$(this).find('td').eq(8).attr('data-title',$('#userdata th').eq(8).text())
+							$(this).find('td').eq(9).attr('data-title',$('#userdata th').eq(9).text())
+							$(this).find('td').eq(10).attr('data-title',$('#userdata th').eq(10).text())
+							$(this).find('td').eq(11).attr('data-title',$('#userdata th').eq(11).text())
+							$(this).find('td').eq(12).attr('data-title',$('#userdata th').eq(12).text())
+						});
 					});
 			}
 		}
