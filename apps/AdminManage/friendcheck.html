@@ -175,17 +175,46 @@
 			</span>
 		</div>
 	</div>
-<div id="portlet-set" class="modal hide">
+	<div id="portlet-set" class="modal hide">
 		<div class="modal-header">
 			<button data-dismiss="modal" class="close" type="button"></button>
 			<h3>封号理由</h3>
 		</div>
 		<div class="modal-body">
-			<textarea name="" placeholder="请输入封号原由"></textarea>
+			<select style="width:100px" id="userStatusSelect" class="userStatusSelect">
+				<option value="0">正常</option>
+				<option value="1">待审核</option>
+				<option value="2">封号</option>
+				<option value="3">低质量</option>
+				<option value="4">封禁设备</option>
+			</select>
+			<select style="width: 100px; display: none;" id="banType">
+				<option value="1">一天</option>
+				<option value="0">永久</option>
+			</select>
+			<div class="controls formular" id="commentDiv" style="display:none;">
+				原因： <input type="text" id="comment" data-validation-engine="validate[required]" data-errormessage-value-missing="封号理由不能为空">
+			</div>
 		</div>
 		<div class="modal-footer">
         <a href="#"  data-dismiss="modal" class="btn">关闭</a>
-        <a href="#" class="btn blue send">确认</a>
+        <a href="#" class="btn blue sendmess">确认</a>
+      </div>
+	</div>
+	<div id="portlet-set2" class="modal hide">
+		<div class="modal-header">
+			<button data-dismiss="modal" class="close" type="button"></button>
+			<h3>修改标签</h3>
+		</div>
+		<div class="modal-body">
+			<select style="width:100px">
+				<option value="0">无</option>
+				<option value="1">色情</option>
+			</select>
+		</div>
+		<div class="modal-footer">
+        <a href="#"  data-dismiss="modal" class="btn">关闭</a>
+        <a href="#" class="btn blue okbtn">确认</a>
       </div>
 	</div>
 </body>

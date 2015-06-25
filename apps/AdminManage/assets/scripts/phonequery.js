@@ -1,3 +1,10 @@
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return unescape(r[2]);
+	return null;
+}
+
 var oTable;
 // 用户操作的选项
 function format(data) {
@@ -10,6 +17,12 @@ $(document).ready(function() {
 	// 默认差1个礼拜内的信息
 	$("#startTime").val(getNowTime(-7));
 	$("#endTime").val(getNowTime(0));
+
+	var uid=getQueryString('uid');
+	if(uid!=""&&uid!=undefined)
+	{
+		$('#userIds').val(uid);
+	}
 	// $("#searchItems").validationEngine();
 	// 获取消息通知
 	// $("#search").checkPermission();
@@ -40,17 +53,17 @@ $(document).ready(function() {
 			}],
 			'fl': '0.2',
 			'sex': '男',
-			'totTime': '通话时间'+(new Date()).toString(),
+			'totTime': '通话时间' + (new Date()).toString(),
 			'tag': '标签',
 			'sign': '用户签名',
-			'status': '状态'+(new Date()).toString()
+			'status': '状态' + (new Date()).toString()
 		};
 		if ($(this).hasClass('ar1')) {
-			data.cla='a1';
+			data.cla = 'a1';
 		} else if ($(this).hasClass('ar2')) {
-			data.cla='a2';
+			data.cla = 'a2';
 		}
-		
+
 		//生成新的tr
 		var newtr = format(data);
 		//获取插入新的tr位置
@@ -136,27 +149,33 @@ function getPhoneRecords() {
 			"mDataProp": "phoneRecordId"
 		}, {
 			"sClass": 'arr ar1',
-			"mDataProp": "fromUserId"
+			"mDataProp": null,
+			"fnRender": function(obj) {
+				return obj.aData.fromUserId + '<a class="btn red" style="margin-left: 10px;"><i class="fa fa-plus"></i></a>'
+			}
 		}, {
 			"sClass": 'arr ar2',
-			"mDataProp": "toUserId"
+			"mDataProp": null,
+			"fnRender": function(obj) {
+				return obj.aData.toUserId + '<a class="btn red" style="margin-left: 10px;"><i class="fa fa-plus"></i></a>'
+			}
 		}, {
 			"mDataProp": "duration"
 		}, {
-			"sClass":"hidden-480",
+			"sClass": "hidden-480",
 			"mDataProp": "startTime"
 		}, {
-			"sClass":"hidden-480",
+			"sClass": "hidden-480",
 			"mDataProp": "endTime"
 		}, {
-			"sClass":"hidden-480",
+			"sClass": "hidden-480",
 			"mDataProp": null,
 			"fnRender": function(obj) {
 				// 操作按钮
 				return obj.aData.chargeRate == 0 ? "免费" : obj.aData.chargeRate + "元/分钟";
 			}
 		}, {
-			"sClass":"hidden-480",
+			"sClass": "hidden-480",
 			"mDataProp": null,
 			"fnRender": function(obj) {
 				// 操作按钮

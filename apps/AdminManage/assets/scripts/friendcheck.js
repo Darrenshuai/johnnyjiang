@@ -38,38 +38,55 @@ $(function() {
 		}
 	})
 
+	var s, tag, t;
+	//标签改变
+	$('#applylist').on('click', 'a.changetag', function() {
+		tag = $(this);
+		$('#portlet-set2').modal('show');
+	});
+
+	$('.okbtn').on('click', function(e) {
+		e.preventDefault();
+		var t = $('#portlet-set2').find('option:selected').text();
+		$('#portlet-set2').modal('hide');
+		tag.text(t);
+	});
 
 	//状态改变
-	$('#applylist').on('click', '.status a', function() {
-		var se = $(this),
-			v = $(this).attr('value'),
-			t = $(this).text();
-		if ($(this).hasClass('hasmodel')) {
-			$('#portlet-set').modal('show');
-			(function(k) {
-				//发送封号理由
-				$('.send').on('click', function(e) {
-					e.preventDefault();
-					var val = $('#portlet-set textarea').val();
-					if (val == "") {
-						alert('理由不能为空！');
-					} else {
-						$('#portlet-set').modal('hide');
-						$(k).text(t);
-						//｛....｝
-						//请求操作代码
-						//｛。。。｝
-						//成功后执行下面代码
-						$(k).parents().eq(2).find('.skey').text(t);
-					}
-				});
-			})(se);
-		} else {
-			//请求操作代码
-			//｛。。。｝
-			//成功后执行下面代码
-			$(se).parents().eq(2).find('.skey').text(t);
+	$('#applylist').on('click', 'a.changestutes', function() {
+		s = $(this);
+		$('#portlet-set').modal('show');
+	});
 
+	$('#userStatusSelect').on('change', function() {
+		var v = $(this).find('option:selected').val();
+		t = $(this).find('option:selected').text();
+		if (v != "0" && v != "1") {
+			$('#banType').show();
+			$('#commentDiv').show();
+		} else {
+			$('#banType').hide()
+			$('#commentDiv').hide();
+		}
+	});
+	//发送封号理由
+	$('.sendmess').on('click', function(e) {
+		e.preventDefault();
+		if ($('#comment').is(':visible')) {
+			m = $('#comment').val();
+			if (m.length == 0) {
+				alert('理由不能为空！');
+				return false;
+			} else {
+				$('#portlet-set').modal('hide');
+				s.text(t);
+				s.next('p.notes').text(m);
+			}
+
+		} else {
+			s.next('p.notes').text("");
+			$('#portlet-set').modal('hide');
+			s.text(t);
 		}
 	});
 });
@@ -79,7 +96,7 @@ $(function() {
 function TableInit() {
 	var dt = $('#applylist').dataTable({
 		"bServerSide": true,
-			"bAutoWidth" : true,
+		"bAutoWidth": true,
 		"bFilter": false,
 		"sAjaxSource": "http://115.29.102.106/juzi/web/pendingRequests", // 获取数据的url
 		"fnServerData": retrieveData,
@@ -100,24 +117,12 @@ function TableInit() {
 			}, {
 				"mDataProp": "fromUserId"
 			}, {
-				"sClass":'w220',
+				"sClass": 'w220',
 				"mDataProp": null,
 				"fnRender": function(obj) {
-					return '<div><img src="' + obj.aData.fromUserHeaderPhoto + '" width="100px" height="100px"><br><div class="btn-group status">' +
-						'<button class="btn red skey" style="width:45px">无</button>' +
-						'<button class="btn red dropdown-toggle" data-toggle="dropdown">' +
-						'<span class="caret"></span></button>' +
-						'<ul class="dropdown-menu bottom-up" style="text-align:left">' +
-						'<li><a value="0">无</a></li><li><a value="1">色情</a></li></ul></div>' +
-						'<div class="btn-group status">' +
-						'<button class="btn green skey" style="width:85px">正常</button>' +
-						'<button class="btn green dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>' +
-						'<ul class="dropdown-menu bottom-up" style="text-align:left">' +
-						'<li><a value="0">正常</a></li>' +
-						'<li><a value="1">待审核</a></li>' +
-						'<li><a value="2" class="hasmodel">封号一天</a></li>' +
-						'<li><a value="3" class="hasmodel">封号永久</a></li>' +
-						'<li><a value="4" class="hasmodel">封禁设备</a></li></ul></div></div>'
+					return '<div><img src="' + obj.aData.fromUserHeaderPhoto + '"width="100"><br>'+
+						'<a class="skey changetag" style="margin-right: 10px;">无</a>'+
+						'<a class="skey changestutes">正常</a><p class="notes"></p></div>'
 				}
 			}, {
 				"mDataProp": "fromUserNickName"
@@ -128,31 +133,19 @@ function TableInit() {
 			}, {
 				"mDataProp": "toUserId"
 			}, {
-				"sClass":'w220',
+				"sClass": 'w220',
 				"mDataProp": null,
 				"fnRender": function(obj) {
-					return '<div ><img src="' + obj.aData.toUserHeaderPhoto + '"  width="100"><br><div class="btn-group status">' +
-						'<button class="btn red skey" style="width:45px">无</button>' +
-						'<button class="btn red dropdown-toggle" data-toggle="dropdown">' +
-						'<span class="caret"></span></button>' +
-						'<ul class="dropdown-menu bottom-up" style="text-align:left">' +
-						'<li><a value="0">无</a></li><li><a value="1">色情</a></li></ul></div>' +
-						'<div class="btn-group status">' +
-						'<button class="btn green skey" style="width:85px">正常</button>' +
-						'<button class="btn green dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>' +
-						'<ul class="dropdown-menu bottom-up" style="text-align:left">' +
-						'<li><a value="0">正常</a></li>' +
-						'<li><a value="1">待审核</a></li>' +
-						'<li><a value="2" class="hasmodel">封号一天</a></li>' +
-						'<li><a value="3" class="hasmodel">封号永久</a></li>' +
-						'<li><a value="4" class="hasmodel">封禁设备</a></li></ul></div></div>'
+					return '<div ><img src="' + obj.aData.toUserHeaderPhoto + '"  width="100"><br>' +
+						'<a class="skey changetag" style="margin-right: 10px;">无</a>'+
+						'<a class="skey changestutes">正常</a><p class="notes"></p></div>'
 				}
 			}, {
 				"mDataProp": "toUserNickName"
 			}, {
 				"mDataProp": "toUserDescription"
 			}, {
-				"sClass":'w100',
+				"sClass": 'w100',
 				"mDataProp": null,
 				"fnRender": function(obj) {
 					// 操作按钮
@@ -161,9 +154,9 @@ function TableInit() {
 			}
 		],
 		"aoColumnDefs": [{
-					sDefaultContent: '',
-					aTargets: ['_all']
-				}],
+			sDefaultContent: '',
+			aTargets: ['_all']
+		}],
 		"oLanguage": { // 汉化
 			"sLengthMenu": "每页显示 _MENU_ 条记录",
 			"sZeroRecords": "没有检索到数据",

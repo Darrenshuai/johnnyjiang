@@ -5570,9 +5570,7 @@ a.imgs i{
 .icon-angle-right:before{content:"\f105";}
 [class^="icon-"],[class*=" icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;}
 .changekey .dropdown-menu li > a{line-height:14px;}
-td.arr{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;}
-td.arr:after{content:"\f067";display:inline-block;margin-left:10px;font-weight:bold;cursor:pointer;}
-td.arr.open:after{content:"\f068";}
+td.arr.open i:before{content:"\f068";}
 td.w220{width:220px;}
 td.w100{width:100px}
 tr.new{background:rgb(182,182,182);}
@@ -5583,7 +5581,7 @@ label,input,button,select,textarea{font-size:13px!important;}
 .w220 img{margin-bottom:5px;}
 .text-c{text-align:center;}
 .has-switch{margin-top:6px;}
-.form-actions.btnbox{text-align:center;padding:20px 0;}
+.form-actions.btnbox{text-align:center;  padding: 20px 0 !important;}
 .form-horizontal .control-label{width:auto;}
 .form-horizontal .controls{margin-left:10px;}
 .nickname i{font-weight:bold;margin-left:5px;}
@@ -5592,13 +5590,30 @@ label,input,button,select,textarea{font-size:13px!important;}
 .signs p{max-width:300px;margin:0 auto;}
 .photo div{max-width:230px;margin:0 auto;}
 .imgs i{display:none;}
-.imgs:hover i{display:none;}
+a.imgs:hover i{display:block;}
 #datatable td{vertical-align:middle;}
-.fileinput-button input{position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);transform:translate(-300px,0) scale(4);font-size:23px;direction:ltr;cursor:pointer;}
-.uploadgroup{}
-.fileinput-button{position:relative;}
-.uploadgroup input[type="text"]{position:relative;z-index:2;display:inline-block;margin:0;}
+.fileinput-button input{position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);transform:translate(-300px,0) scale(4);font-size:23px;direction:ltr;cursor:pointer;z-index: 1;}
+.fileinput-button{position:relative;overflow: hidden;}
+.numeric  input[type="text"]{position:relative;z-index:2;display:inline-block;margin:0;}
 .numeric .uploadgroup .btn{position:relative;display:inline-block;margin-top:0;}
 .numeric .uploadgroup .deletnew{
   z-index: 4;
 }
+a.changestutes,a.changetag{
+  text-decoration: none;cursor: pointer;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+a.changestutes:before,a.changetag:before{
+  content: "\f044";
+}
+.numeric .add,.numeric .deletes{
+  display: inline-block;
+  vertical-align: top;
+}
+p.notes{margin:0;}
