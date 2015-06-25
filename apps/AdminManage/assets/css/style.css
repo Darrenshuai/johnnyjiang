@@ -5576,7 +5576,7 @@ td.arr.open:after{content:"\f068";}
 td.w220{width:220px;}
 td.w100{width:100px}
 tr.new{background:rgb(182,182,182);}
-.table-striped tbody>tr:nth-child(odd).new>td{background:rgb(182,182,182);color:#FFF;}
+.table-striped tbody>tr:nth-child(odd).new>td{background:rgb(182,182,182);}
 label,input,button,select,textarea{font-size:13px!important;}
 .btn{font-size:13px!important;}
 .btn-group>.btn,.btn-group>.dropdown-menu,.btn-group>.popover{font-size:13px!important;}
