@@ -40,10 +40,10 @@ $(document).ready(function() {
 			}],
 			'fl': '0.2',
 			'sex': '男',
-			'totTime': '通话时间',
+			'totTime': '通话时间'+(new Date()).toString(),
 			'tag': '标签',
 			'sign': '用户签名',
-			'status': '状态'
+			'status': '状态'+(new Date()).toString()
 		};
 		if ($(this).hasClass('ar1')) {
 			data.cla='a1';
