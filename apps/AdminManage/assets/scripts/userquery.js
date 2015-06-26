@@ -130,7 +130,7 @@ var DataManage = function() {
 				}, {
 					"mDataProp": null,
 					"fnRender": function(obj) {
-						return '<a href="phonequery.html?uid='+obj.aData.userId+'">' + obj.aData.totalDuration + '</a>'
+						return '<a href="phonequery.html?uid='+obj.aData.userId+'" target="_blank">' + obj.aData.totalDuration + '</a>'
 					}
 				}, {
 					"mDataProp": "reportCount"
