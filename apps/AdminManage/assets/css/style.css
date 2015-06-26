@@ -5564,9 +5564,6 @@ a.imgs i{
   font-size: 20px;
   font-weight: bold;
 }
-.photoimg{
-    padding-top: 10px;
-}
 .icon-angle-left:before{content:"\f104";}
 .icon-angle-right:before{content:"\f105";}
 [class^="icon-"],[class*=" icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;}
@@ -5593,6 +5590,10 @@ label,input,button,select,textarea{font-size:13px!important;}
 .imgs i{display:none;}
 a.imgs:hover i{display:block;}
 #datatable td{vertical-align:middle;}
+label.uploadgroup{
+  margin: 0;
+  display: inline-block;
+}
 .fileinput-button input{position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);transform:translate(-300px,0) scale(4);font-size:23px;direction:ltr;cursor:pointer;z-index: 1;}
 .fileinput-button{position:relative;overflow: hidden;}
 .numeric  input[type="text"]{position:relative;z-index:2;display:inline-block;margin:0;}
