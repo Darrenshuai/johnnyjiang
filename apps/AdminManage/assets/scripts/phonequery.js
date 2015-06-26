@@ -151,13 +151,13 @@ function getPhoneRecords() {
 			"sClass": 'arr ar1',
 			"mDataProp": null,
 			"fnRender": function(obj) {
-				return obj.aData.fromUserId + '<a class="btn red" style="margin-left: 10px;"><i class="fa fa-plus"></i></a>'
+				return obj.aData.fromUserId + '<a class="row-details red" style="margin-left: 10px;"></a>'
 			}
 		}, {
 			"sClass": 'arr ar2',
 			"mDataProp": null,
 			"fnRender": function(obj) {
-				return obj.aData.toUserId + '<a class="btn red" style="margin-left: 10px;"><i class="fa fa-plus"></i></a>'
+				return obj.aData.toUserId + '<a class="row-details red" style="margin-left: 10px;"></a>'
 			}
 		}, {
 			"mDataProp": "duration"

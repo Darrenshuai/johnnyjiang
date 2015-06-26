@@ -5481,6 +5481,7 @@ label.font{
   display: inline-block;
   vertical-align: middle;
   line-height: 34px;
+  margin:0;
 }
 label.more{
     display: inline-block;
@@ -5617,3 +5618,24 @@ a.changestutes:before,a.changetag:before{
   vertical-align: top;
 }
 p.notes{margin:0;}
+.row-details {
+  margin-top: 3px;
+  display: inline-block;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+   background: url("../img/datatable-row-openclose.png") no-repeat 0 0;
+}
+.open .row-details{
+  background: url("../img/datatable-row-openclose.png") no-repeat 0 -23px !important;
+}
+.datetimepicker-dropdown-bottom-left:before{
+  right: 30px;
+  top: -7px;
+  left: initial;
+}
+.datetimepicker-dropdown-bottom-left:after{
+  right: 31px;
+  top: -6px;
+  left: initial;
+}
