@@ -59,44 +59,7 @@
 
 	<div class="page-container">
 		<div class="page-sidebar nav-collapse collapse">
-			<ul class="page-sidebar-menu">
-				<li>
-					<div class="sidebar-toggler hidden-phone"></div>
-				</li>
-				<li>
-					<a href="index.html">
-					<i class="fa fa-bar-chart"></i> 
-					<span class="title">数据统计分析</span>
-					</a>
-				</li>
-				<li class="active">
-					<a href="userquery.html">
-						<i class="fa fa-user"></i> 
-						<span class="title">用户管理</span>
-						<span class="arrow"></span>
-					</a>
-					<ul class="sub-menu">
-						<li class="active">
-							<a href="userquery.html">用户信息检索</a>
-						</li>
-						<li >
-							<a href="registmore.html">用户批量注册</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="phonequery.html">
-					<i class="fa fa-phone"></i> 
-					<span class="title">通话记录查询</span>
-					</a>
-				</li>
-				<li>
-					<a href="friendcheck.html">
-					<i class="fa fa-check-square-o"></i> 
-					<span class="title">待审核好友列表</span>
-					</a>
-				</li>
-			</ul>
+
 		</div>
 		<div class="page-content">
 			
@@ -265,7 +228,7 @@
 									</div>
 									<div class="row-fluid">
 										<div class="form-actions btnbox">
-											<button type="button" class="btn blue" id="searchuser"><i class="fa fa-search"></i>搜索</button>   
+											<button type="button" class="btn blue" id="searchuser" permission="91000"><i class="fa fa-search"></i>搜索</button>   
 										</div>
 									</div>
 								</form>
@@ -290,9 +253,9 @@
 												<th>账户余额</th>
 												<th>实际余额</th>
 												<th>收费金额</th>
-												<th>录音</th>
+												<th class="audio">录音</th>
 												<th>标签</th>
-												<th>状态</th>
+												<th  class="states">状态</th>
 												<th>操作</th>
 											</tr>
 										</thead>

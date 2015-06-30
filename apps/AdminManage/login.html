@@ -31,7 +31,7 @@
 
 	<div class="content">
 		<!-- BEGIN LOGIN FORM -->
-		<form class="form-vertical login-form" action="index.html" method="post">
+		<form class="form-vertical login-form" method="post">
 			<h3 class="form-title">登录账户</h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
@@ -59,7 +59,7 @@
 				<label class="checkbox">
 				<input type="checkbox" name="remember" value="1"/> 记住我
 				</label>
-				<button type="button" class="btn blue pull-right submit">
+				<button type="submit" class="btn blue pull-right submit">
 				登录 <i class="m-icon-swapright m-icon-white"></i>
 				</button>            
 			</div>
@@ -98,30 +98,7 @@
 		jQuery(document).ready(function() {     
 		  App.init();
 		  Login.init();
-
-		  $('button.submit').on('click',function(){
-		  	 console.log('test');
-		  	 $.ajax({
-		  	 	url: 'http://115.29.102.106/juzi/web/login',
-		  	 	type: 'get',
-		  	 	dataType: 'jsonp',
-		  	 	data: {
-		  	 		"userName" : $('#username').val(),
-			        "userPwd" : $.md5($('#password').val())
-		  	 	},
-		  	 })
-		  	 .done(function(msg) {
-		  	 	console.log(msg);
-		  	 })
-		  	 .fail(function() {
-		  	 	console.log("error");
-		  	 })
-		  	 .always(function() {
-		  	 	console.log("complete");
-		  	 });
-		  	 
-		  });
-		});
+		 });
 	</script>
 	<!-- END JAVASCRIPTS -->
 </body>

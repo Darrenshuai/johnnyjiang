@@ -5564,6 +5564,9 @@ a.imgs i{
   font-size: 20px;
   font-weight: bold;
 }
+.imgs i{display:none;}
+a.imgs:hover i{display:block;}
+a.imgs.unable:hover i,a.unable.unable i{display: none;}
 .icon-angle-left:before{content:"\f104";}
 .icon-angle-right:before{content:"\f105";}
 [class^="icon-"],[class*=" icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;}
@@ -5587,8 +5590,7 @@ label,input,button,select,textarea{font-size:13px!important;}
 .nickname i.fa-venus{color:rgb(255,125,125);}
 .signs p{max-width:300px;margin:0 auto;}
 .photo div{max-width:230px;margin:0 auto;}
-.imgs i{display:none;}
-a.imgs:hover i{display:block;}
+
 #datatable td{vertical-align:middle;}
 label.uploadgroup{
   margin: 0;

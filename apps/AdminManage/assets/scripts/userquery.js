@@ -141,6 +141,7 @@ var DataManage = function() {
 				}, {
 					"mDataProp": "chargeRate"
 				}, {
+					"sClass":"audio",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						if (obj.aData.reportCount == 0) {
@@ -150,6 +151,7 @@ var DataManage = function() {
 						}
 					}
 				}, {
+					"sClass":"states",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						var tag = obj.aData.tag;
@@ -214,6 +216,9 @@ var DataManage = function() {
 					})
 					.fail(function() {})
 					.always(function() {
+						//控制按钮
+						App.checkBtns();
+						
 						$('div.switch').bootstrapSwitch();
 						$('#userdata tr').each(function() {
 							$(this).find('td').eq(0).attr('data-title', $('#userdata th').eq(0).text())
@@ -239,6 +244,7 @@ var DataManage = function() {
 
 $(function() {
 	App.init();
+	
 	$(".form_datetime").datetimepicker({
 		isRTL: App.isRTL(),
 		language: 'zh-CN',
@@ -264,6 +270,8 @@ $(function() {
 	});
 
 	DataManage.init();
+	
+
 	//点击搜索
 	$('#searchuser').on('click', function() {
 		var oSettings = OdataTable.fnSettings();
