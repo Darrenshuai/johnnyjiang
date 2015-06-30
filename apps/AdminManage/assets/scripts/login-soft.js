@@ -84,7 +84,7 @@ var Login = function() {
 					jsonp: '_jsonp'
 				})
 				.done(function(data) {
-					localStorage.setItem('jzlist', data.)
+					localStorage.setItem('jzlist', data.permissionId)
 				})
 				.fail(function() {
 					console.log("error");
