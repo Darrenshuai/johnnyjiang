@@ -54,9 +54,7 @@ var Login = function() {
 							"userPwd": $.md5($('#password').val())
 						},
 					})
-					.done(function(msg) {
-						console.log(msg);
-					})
+					.done(function(msg) {})
 					.fail(function() {
 						console.log("error");
 					})
@@ -79,7 +77,21 @@ var Login = function() {
 	return {
 		//main function to initiate the module
 		init: function() {
-
+			$.ajax({
+					url: 'http://115.29.102.106/juzi/web/getAdminPermission',
+					type: 'get',
+					dataType: 'jsonp',
+					jsonp: '_jsonp'
+				})
+				.done(function(data) {
+					localStorage.setItem('jzlist', data.)
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
 			handleLogin();
 			$.backstretch([
 				"assets/img/bg/1.jpg",
