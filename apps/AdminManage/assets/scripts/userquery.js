@@ -130,7 +130,7 @@ var DataManage = function() {
 				}, {
 					"mDataProp": null,
 					"fnRender": function(obj) {
-						return '<a href="phonequery.html?uid='+obj.aData.userId+'" target="_blank">' + obj.aData.totalDuration + '</a>'
+						return '<a class="redirect" href="phonequery.html?uid='+obj.aData.userId+'" target="_blank">' + obj.aData.totalDuration + '</a>'
 					}
 				}, {
 					"mDataProp": "reportCount"
@@ -166,11 +166,11 @@ var DataManage = function() {
 						return '<a class="skey changestutes">' + statusArr[obj.aData.status] + '</a><p class="notes"></p>'
 					}
 				}, {
-					"sClass": "td-opt",
+					"sClass": "td-opt opt",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						// 操作按钮
-						return '<a class="send" title="发送信息"><i class="fa fa-envelope-o"></i></a>'
+						return '<a class="btn blue small send" title="发送信息"><i class="fa fa-envelope-o"></i></a>'
 					}
 				}],
 				"aoColumnDefs": [{
@@ -313,12 +313,30 @@ $(function() {
 		$('#portlet-set').modal('show');
 	});
 
+	$('#userdata').on('click','a.redirect',function(e){
+		var m=localStorage.jzlist;
+		if(!m.includes('98000'))
+		{
+			e.preventDefault();
+			return false;
+		}
+	});
+
 	$('#userStatusSelect').on('change', function() {
 		var v = $(this).find('option:selected').val();
 		t = $(this).find('option:selected').text();
-		if (v != "0" && v != "1") {
-			$('#banType').show();
-			$('#commentDiv').show();
+		if (v != "0" && v != "1"&&v!="3") {
+			if(v=="4")
+			{
+				$('#banType').hide();
+				$('#commentDiv').show();
+			}
+			else
+			{
+				$('#banType').show();
+				$('#commentDiv').show();
+			}
+			
 		} else {
 			$('#banType').hide()
 			$('#commentDiv').hide();

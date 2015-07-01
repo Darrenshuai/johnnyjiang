@@ -21,7 +21,7 @@ var App = function() {
             93000: '', //查询用户信息
             93001: '', //发送好友请求
             94000: '<li ><a href="registmore.html">用户批量注册</a></li>', //用户注册
-            95000: '', //发送系统消息
+            95000:true, //发送系统消息
             95001: '', //指定用户发送
             95002: '', //发送全体用户
             96000: '<li><a href="friendcheck.html"><i class="fa fa-check-square-o"></i><span class="title">待审核好友列表</span></a></li>', //查询待审核好友申请
@@ -36,7 +36,8 @@ var App = function() {
         },
         changestatus = false,
         audio = false,
-        duserimg = false;
+        duserimg = false,
+        sendmes=false;
     // theme layout color set
     var layoutColorCodes = {
         'blue': '#4b8df8',
@@ -824,6 +825,7 @@ var App = function() {
             handleScrollers(); // handles slim scrolling contents 
             handleResponsiveOnInit(); // handler responsive elements on page load
             this.getMenu();
+            this.getNotice();
             //layout handlers
             handleFixedSidebar(); // handles fixed sidebar menu
             handleFixedSidebarHoverable(); // handles fixed sidebar on hover effect 
@@ -846,6 +848,23 @@ var App = function() {
             App.addResponsiveHandler(handleChoosenSelect); // reinitiate chosen dropdown on main content resize. disable this line if you don't really use chosen dropdowns.
             handleFullScreenMode() // handles full screen
         },
+        getNotice:function(){
+            $.ajax({
+                url: 'http://115.29.102.106:9001/juzi/web/pendingRequests/count',
+                type: 'get',
+                dataType: 'jsonp',
+                jsonp:'_jsonp'
+            })
+            .done(function(data) {
+               $('#header_notification_bar .badge').text(data)
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+        },
         getMenu: function() {
             var c = localStorage.getItem('jzlist');
             i = 0,
@@ -862,6 +881,8 @@ var App = function() {
                         audio =userTypelist[d[i]];
                     } else if (d[i] == "91003") {
                         duserimg = userTypelist[d[i]];
+                    }else if(d[i]=="95000"){
+                        sendmes=userTypelist[d[i]];
                     } else {
                         $(sec).append(userTypelist[d[i]]);
                     }
@@ -895,6 +916,10 @@ var App = function() {
                 $('.audio').hide();
             }
 
+            if(!sendmes)
+            {
+                $('.opt').hide();
+            }
             //操作头像
             if(!duserimg)
             {

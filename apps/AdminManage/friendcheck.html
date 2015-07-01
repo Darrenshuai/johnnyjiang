@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-	<title>橘子热线后台系统</title>
+	<title>桔子热线后台系统</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />    
@@ -31,6 +31,12 @@
 				<img src="assets/img/menu-toggler.png" alt="" />
 				</a>                       
 				<ul class="nav pull-right">
+					<li class="dropdown" id="header_notification_bar">
+						<a href="friendcheck.html" class="dropdown-toggle">
+						<i class="fa fa-warning"></i>
+						<span class="badge"></span>
+						</a>
+					</li>
 					<li class="dropdown user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 						<img alt="" src="assets/img/avatar1_small.jpg" />
@@ -141,7 +147,7 @@
 	<div id="portlet-set" class="modal hide">
 		<div class="modal-header">
 			<button data-dismiss="modal" class="close" type="button"></button>
-			<h3>封号理由</h3>
+			<h3>用户状态更改</h3>
 		</div>
 		<div class="modal-body">
 			<select style="width:100px" id="userStatusSelect" class="userStatusSelect">

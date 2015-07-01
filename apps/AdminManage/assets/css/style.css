@@ -400,9 +400,9 @@ Header and header elements.
   padding-right: 4px;
 }
 
-.header .nav > li.dropdown > a:last-child {
+/*.header .nav > li.dropdown > a:last-child {
   padding-right: 0;
-}
+}*/
 
 .header .nav > li.dropdown:last-child {
    padding-right: 2px;

@@ -61,9 +61,17 @@ $(function() {
 	$('#userStatusSelect').on('change', function() {
 		var v = $(this).find('option:selected').val();
 		t = $(this).find('option:selected').text();
-		if (v != "0" && v != "1") {
-			$('#banType').show();
-			$('#commentDiv').show();
+		if (v != "0" && v != "1" &&v!="3") {
+			if(v=="4")
+			{
+				$('#banType').hide();
+				$('#commentDiv').show();
+			}
+			else
+			{
+				$('#banType').show();
+				$('#commentDiv').show();
+			}
 		} else {
 			$('#banType').hide()
 			$('#commentDiv').hide();
