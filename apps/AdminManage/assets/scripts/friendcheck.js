@@ -106,7 +106,7 @@ function TableInit() {
 		"bServerSide": true,
 		"bAutoWidth": true,
 		"bFilter": false,
-		"sAjaxSource": "http://115.29.102.106/juzi/web/pendingRequests", // 获取数据的url
+		"sAjaxSource": "http://115.29.102.106:81/juzi/web/pendingRequests", // 获取数据的url
 		"fnServerData": retrieveData,
 		"sPaginationType": "bootstrap",
 		"bSort": false,

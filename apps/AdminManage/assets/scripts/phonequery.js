@@ -93,7 +93,7 @@ function getPhoneRecords() {
 		"bProcessing": true, // 加载数据时显示正在加载信息
 		"bServerSide": true, // 指定从服务器端获取数据
 		"bFilter": false, // 使用过滤功能
-		"sAjaxSource": "http://115.29.102.106/juzi/web/phoneRecord", // 获取数据的url
+		"sAjaxSource": "http://115.29.102.106:81/juzi/web/phoneRecord", // 获取数据的url
 		"fnServerData": getData, // 获取数据的处理函数
 		"sPaginationType": "bootstrap", // 翻页界面类型
 		"bSort": false, // 不启用排序

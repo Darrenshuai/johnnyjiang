@@ -45,7 +45,7 @@ var Login = function() {
 			},
 			submitHandler: function(form) {
 				$.ajax({
-						url: 'http://115.29.102.106/juzi/web/login',
+						url: 'http://115.29.102.106:81/juzi/web/login',
 						type: 'post',
 						dataType: 'jsonp',
 						jsonp: '_jsonp',
@@ -78,7 +78,7 @@ var Login = function() {
 		//main function to initiate the module
 		init: function() {
 			$.ajax({
-					url: 'http://115.29.102.106/juzi/web/getAdminPermission',
+					url: 'http://115.29.102.106:81/juzi/web/getAdminPermission',
 					type: 'get',
 					dataType: 'jsonp',
 					jsonp: '_jsonp'

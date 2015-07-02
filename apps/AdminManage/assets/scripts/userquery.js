@@ -8,7 +8,7 @@ var DataManage = function() {
 				return;
 			};
 			OdataTable = $('#userdata').dataTable({
-				"sAjaxSource": "http://115.29.102.106/juzi/web/users/list", // 获取数据的url
+				"sAjaxSource": "http://115.29.102.106:81/juzi/web/users/list", // 获取数据的url
 				"bFilter": false, // 使用过滤功能
 				"bAutoWidth": false,
 				"bServerSide": true, // 指定从服务器端获取数据
