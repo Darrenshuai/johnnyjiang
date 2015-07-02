@@ -151,7 +151,6 @@ var DataManage = function() {
 						}
 					}
 				}, {
-					"sClass":"states",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						var tag = obj.aData.tag;
@@ -161,6 +160,7 @@ var DataManage = function() {
 						return '<a class="skey changetag">' + tag + '</a>'
 					}
 				}, {
+					"sClass":"states",
 					"mDataProp": null,
 					"fnRender": function(obj) {
 						return '<a class="skey changestutes">' + statusArr[obj.aData.status] + '</a><p class="notes"></p>'
