@@ -24,7 +24,7 @@ var App = function() {
             95000:true, //发送系统消息
             95001: '', //指定用户发送
             95002: '', //发送全体用户
-            96000: '<li><a href="friendcheck.html"><i class="fa fa-check-square-o"></i><span class="title">待审核好友列表</span></a></li>', //查询待审核好友申请
+            96000: '<li class="checkfriends"><a href="friendcheck.html"><i class="fa fa-check-square-o"></i><span class="title">待审核好友列表<i class="badge"></i></span></a></li>', //查询待审核好友申请
             96001: '', //改变待审核好友申请状态
             96002: '', //获得好友申请列表
             97000: '', //抽奖
@@ -824,8 +824,8 @@ var App = function() {
             handleUniform();
             handleScrollers(); // handles slim scrolling contents 
             handleResponsiveOnInit(); // handler responsive elements on page load
-            this.getMenu();
-            this.getNotice();
+            this.getMenu(this.getNotice());
+
             //layout handlers
             handleFixedSidebar(); // handles fixed sidebar menu
             handleFixedSidebarHoverable(); // handles fixed sidebar on hover effect 
@@ -856,7 +856,13 @@ var App = function() {
                 jsonp:'_jsonp'
             })
             .done(function(data) {
-               $('#header_notification_bar .badge').text(data)
+               $('#header_notification_bar .badge').text(data);
+               var l=$('.checkfriends').length;
+               if(l>0)
+               {
+                    var t=$('.checkfriends a').text();
+                    $('.checkfriends .badge').text(data);
+               }
             })
             .fail(function() {
                 console.log("error");
@@ -865,7 +871,7 @@ var App = function() {
                 console.log("complete");
             });
         },
-        getMenu: function() {
+        getMenu: function(callback) {
             var c = localStorage.getItem('jzlist');
             i = 0,
                 d = c.split(',');
@@ -894,6 +900,10 @@ var App = function() {
             p.parent().addClass('active');
             if(p.parents().eq(1).hasClass('sub-menu')){
                 p.parents().eq(2).addClass('active');
+            }
+            if(callback)
+            {
+                callback();
             }
 
         },
