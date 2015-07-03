@@ -77,6 +77,7 @@ var Login = function() {
 	return {
 		//main function to initiate the module
 		init: function() {
+			//获取权限
 			$.ajax({
 					url: 'http://115.29.102.106:81/juzi/web/getAdminPermission',
 					type: 'get',
@@ -92,6 +93,22 @@ var Login = function() {
 				.always(function() {
 					console.log("complete");
 				});
+			//获取审核数量
+			  $.ajax({
+	                url: 'http://115.29.102.106:9001/juzi/web/pendingRequests/count',
+	                type: 'get',
+	                dataType: 'jsonp',
+	                jsonp:'_jsonp'
+	            })
+	            .done(function(data) {
+	               localStorage.setItem('notice', data);
+	            })
+	            .fail(function() {
+	                console.log("error");
+	            })
+	            .always(function() {
+	                console.log("complete");
+	            });
 			handleLogin();
 			$.backstretch([
 				"assets/img/bg/1.jpg",

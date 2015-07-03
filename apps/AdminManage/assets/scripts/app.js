@@ -824,7 +824,7 @@ var App = function() {
             handleUniform();
             handleScrollers(); // handles slim scrolling contents 
             handleResponsiveOnInit(); // handler responsive elements on page load
-            this.getMenu(this.getNotice());
+            this.getMenu();
 
             //layout handlers
             handleFixedSidebar(); // handles fixed sidebar menu
@@ -848,31 +848,9 @@ var App = function() {
             App.addResponsiveHandler(handleChoosenSelect); // reinitiate chosen dropdown on main content resize. disable this line if you don't really use chosen dropdowns.
             handleFullScreenMode() // handles full screen
         },
-        getNotice:function(){
-            $.ajax({
-                url: 'http://115.29.102.106:9001/juzi/web/pendingRequests/count',
-                type: 'get',
-                dataType: 'jsonp',
-                jsonp:'_jsonp'
-            })
-            .done(function(data) {
-               $('#header_notification_bar .badge').text(data);
-               var l=$('.checkfriends').length;
-               if(l>0)
-               {
-                    var t=$('.checkfriends a').text();
-                    $('.checkfriends .badge').text(data);
-               }
-            })
-            .fail(function() {
-                console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
-            });
-        },
-        getMenu: function(callback) {
+        getMenu: function() {
             var c = localStorage.getItem('jzlist');
+            var nc= localStorage.getItem('notice');
             i = 0,
                 d = c.split(',');
             var list = '<ul class="page-sidebar-menu"><li><div class="sidebar-toggler hidden-phone"></div></li><li><a href="index.html"><i class="fa fa-bar-chart"></i><span class="title">数据统计分析</span></li></ul>';
@@ -901,11 +879,16 @@ var App = function() {
             if(p.parents().eq(1).hasClass('sub-menu')){
                 p.parents().eq(2).addClass('active');
             }
-            if(callback)
+            if($('.checkfriends').length>0&&nc!=''&&nc!=undefined)
             {
-                callback();
+                if(c=="friendcheck.html")
+                {
+                    localStorage.notice='';
+                }
+                else{
+                    $('.badge').text(nc);
+                }
             }
-
         },
         checkBtns: function() {
             var m = $('*[permission]').attr('permission');
