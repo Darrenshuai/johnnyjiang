@@ -55,6 +55,7 @@ $(function() {
 	//状态改变
 	$('#applylist').on('click', 'a.changestutes', function() {
 		s = $(this);
+		$('#comment').val('');
 		$('#portlet-set').modal('show');
 	});
 

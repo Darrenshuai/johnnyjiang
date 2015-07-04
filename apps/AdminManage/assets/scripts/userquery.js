@@ -297,6 +297,7 @@ $(function() {
 	//标签改变
 	$('#userdata').on('click', 'a.changetag', function() {
 		tag=$(this);
+		$('#comment').val('');
 		$('#portlet-set2').modal('show');
 	});
 
