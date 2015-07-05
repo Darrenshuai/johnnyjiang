@@ -852,7 +852,7 @@ var App = function() {
             var c = localStorage.getItem('jzlist');
             var nc= localStorage.getItem('notice');
             i = 0,
-                d = c.split(',');
+                d = c.split(',').sort();
             var list = '<ul class="page-sidebar-menu"><li><div class="sidebar-toggler hidden-phone"></div></li><li><a href="index.html"><i class="fa fa-bar-chart"></i><span class="title">数据统计分析</span></li></ul>';
             var sec = $(list);
             for (i; i < d.length; i++) {
